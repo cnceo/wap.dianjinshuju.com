@@ -29,8 +29,8 @@ $typeid=intval($_GET['typeid']);
 $typeid = 1;
 if(!$mydb) $mydb = new MYSQL($dbconf);
 
-//$dateTime = date('Ymd',time());
-$dateTime = "20180917";
+$dateTime = date('Ymd',time());
+//$dateTime = "20180917";
 
 $fieldsStr = "id,number,data,func_ext,beishu,round,profit";
 $tableStr=$conf['db']['prename']."data";
@@ -56,8 +56,8 @@ if($data) foreach($data as $index=>$var){
  * @return array
  */
 function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf){
-    //$dateTime = date('Ymd',time());
-    $dateTime = "20180917";
+    $dateTime = date('Ymd',time());
+//    $dateTime = "20180917";
     $beishu=array('1','2','4','4','8','16','20','40','80');
     $yuceData = array();
     $yuceData[QIANSHAN] = array('currResult' => 1,'function'=>QIANSHAN, 'nextData' => 0, 'nextNum' => 0, 'nextProfit' => 0, 'nextRound' => 1, 'nextBeishu' => 1, 'beishuIndex' => 0);
