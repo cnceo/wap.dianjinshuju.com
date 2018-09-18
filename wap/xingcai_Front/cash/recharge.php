@@ -119,7 +119,22 @@
   </div> </div> </div> </div>
 
 
+     <script>
+         $(function(){
+             $(document).on("change","#grade",function(e){
+                 var $this = $(this);
+                 $("#ContentPlaceHolder1_txtMoney").val($this.find('option:selected').data("amount"))
+                 $("#ContentPlaceHolder1_txtMoney").val($("#ContentPlaceHolder1_txtMoney").val().replace(/\D+/g, ''));
+                 jQuery("#chineseMoney").html(changeMoneyToChinese($("#ContentPlaceHolder1_txtMoney").val()));
 
+
+                 jQuery("#m_max_txt").html($this.find('option:selected').data("name"));
+                 jQuery("#m_max_val").html($this.find('option:selected').data("amount"));
+             })
+
+         });
+
+     </script>
 </body></html>
 
 
