@@ -188,7 +188,7 @@ function submitData(data, conf){
 	log('提交从'+conf.source+'采集的'+conf.title+'第'+data.number+'数据：'+data.data);
 	
 	try{
-		var client=mysql.createClient(config.dbinfo);
+		var client=mysql.createConnection(config.dbinfo);
 	}catch(err){
 		throw('连接数据库失败');
 	}
@@ -566,7 +566,7 @@ function submitDataInput(data){
 	log('提交从前台录入第'+data.number+'数据：'+data.data);
 	
 	try{
-		var client=mysql.createClient(config.dbinfo);
+		var client=mysql.createConnection(config.dbinfo);
 	}catch(err){
 		throw('连接数据库失败');
 	}
