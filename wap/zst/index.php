@@ -225,7 +225,7 @@ function toggleMiss(){
 					$whereStr.=' and time<'.$toTime;
 					$whereStr2.=' and a.time<'.$toTime;
 				}else{}
-				$orderStr=" order by a.number desc";
+				$orderStr="and a.round is null order by a.number desc";
 	
 				$totalNumber = $mydb->row_count($tableStr,$whereStr);
 
@@ -343,6 +343,11 @@ function toggleMiss(){
                     echo '<td class="wdh" align="center"><div class="">停</div></td>';
                     echo '<td class="wdh" align="center"><div class="">止</div></td>';
                     echo '<td class="wdh" align="center"><div class="">下注</div></td>';
+                }else if($var[1]<="20180919-023"){
+                    echo '<td class="wdh" align="center"><div class="ball05">正</div></td>';
+                    echo '<td class="wdh" align="center"><div class="">在</div></td>';
+                    echo '<td class="wdh" align="center"><div class="">分析</div></td>';
+                    echo '<td class="wdh" align="center"><div class="">中</div></td>';
                 }else{
                     echo '<td class="wdh" align="center"><div class="ball05">'.$yucedata.'</div></td>';
                     echo '<td class="wdh" align="center"><div class="">'.$yucebeishu*$touzhu.'</div></td>';
