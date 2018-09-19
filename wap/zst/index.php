@@ -210,9 +210,9 @@ function toggleMiss(){
 				if(!$pgs){$pgs=30;}
 				$tableStr=$conf['db']['prename']."data";
 				$tableStr2=$conf['db']['prename']."data a";
-				$fieldsStr="time, number, data,func_ext,profit";
+				$fieldsStr="time, number, data,func_ext,profit,round";
 				
-				$fieldsStr2="a.time, a.number, a.data, a.func_ext,a.profit";
+				$fieldsStr2="a.time, a.number, a.data, a.func_ext,a.profit,a.round";
 				$whereStr=" type=$typeid ";
 				$whereStr2=" a.type=$typeid ";
 				if($fromTime && $toTime){
@@ -305,10 +305,8 @@ function toggleMiss(){
                 }
 
                 $profit = $var[4];
+                $isgameover = $var[5];
 
-                if($zhiying<=$profit){
-                    $isgameover = true;
-                }
 
                 echo '<tr>';
 				echo '<td id="title">'.$var[1].'</td>';
@@ -340,7 +338,7 @@ function toggleMiss(){
                     echo '<td class="wdh" align="center"><div class="ball02">'.$var['d5'].'</div></td>';
                 }
 
-                if($isgameover){
+                if($isgameover=="1" || $isgameover=="2" ){
                     echo '<td class="wdh" align="center"><div class="ball05">请</div></td>';
                     echo '<td class="wdh" align="center"><div class="">停</div></td>';
                     echo '<td class="wdh" align="center"><div class="">止</div></td>';

@@ -126,12 +126,12 @@ function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf){
     }
     foreach ($allOldData as &$data){
         $whereStr = " id=$oldId";
-        $profit = $mydb->get_one($tableStr,$whereStr)['profit'];
+        $oldprofit = $mydb->get_one($tableStr,$whereStr)['profit'];
         $zhishun = 35;
         $zhiying = 10;
         $isgameover = false;
         if($qihao>23 && $data[0]['currResult']==1){
-            $profit = bcadd($profit , $data[0]['nextProfit']);
+            $profit = bcadd($oldprofit , $data[0]['nextProfit']);
             $whereStr = " id=$newId  ";
             $mydb->update($tableStr,array('profit'=>$profit),$whereStr);
         }
@@ -178,12 +178,18 @@ function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf){
             }
         }else{
 
-            if($zhiying<=$profit){
+            if(!$isgameover&&$zhiying<=$oldprofit){
                 $isgameover = true;
+
+                $whereStr = " id=$newId";
+                $mydb->update($tableStr,array('round'=>1,"profit"=>$oldprofit),$whereStr);
             }
 
-            if($profit<0 && $zhishun <= abs($profit)){
+            if(!$isgameover&&$oldprofit<0 && $zhishun <= abs($oldprofit)){
                 $isgameover = true;
+
+                $whereStr = " id=$newId";
+                $mydb->update($tableStr,array('round'=>2,"profit"=>$oldprofit),$whereStr);
             }
 
             if($isgameover){
