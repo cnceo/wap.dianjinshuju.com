@@ -148,8 +148,25 @@ function run(conf){
 				try{
 					JSON.parse(data).data.forEach(function(bean){
 						submitData(bean, conf);
-					});	
+					});
 					
+				//调用写入func_ext接口
+				var option2={                                                                                               
+					host:"web.dianjinshuju.com",                                                                             
+					timeout:500000,                                                                                      
+					path: '/yuce/yuce.php',                   
+					headers:{                                                                                           
+						"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) "                             
+					}                                                                                                  
+				}; 
+				http.request(option2, function(res){
+					log(res);
+				}).on('timeout', function(err){
+					log(err);
+				}).on("error", function(err){
+					// 一般网络出问题会引起这个错
+					log(err);
+				}).end();
 				}catch(err){
 					//console.log(err);
 					throw('提交出错：'+err);
@@ -225,22 +242,6 @@ function submitData(data, conf){
 			// 正常
 			try{
 				sleep=calc[conf.name](data);
-
-				//调用写入func_ext接口
-				var option2={                                                                                               
-					host:"web.dianjinshuju.com",                                                                             
-					timeout:50000,                                                                                      
-					path: '/yuce/yuce.php',                   
-					headers:{                                                                                           
-						"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) "                             
-					}                                                                                                  
-				}; 
-				http.request(option2, function(res){
-				}).on('timeout', function(err){
-				}).on("error", function(err){
-					// 一般网络出问题会引起这个错
-					log(err);
-				}).end();
 			}catch(err){
 				log('解析下期数据出错：'+err);
 				restartTask(conf, config.errorSleepTime);
