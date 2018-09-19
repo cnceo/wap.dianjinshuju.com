@@ -124,11 +124,21 @@ function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf){
         }
         $yuceData[$data2[1]['function']]['currResult']=$data2[0]['currResult'];
     }
-
     foreach ($allOldData as &$data){
+        $whereStr = " id=$oldId";
+        $profit = $mydb->get_one($tableStr,$whereStr)['profit'];
+        $zhishun = 35;
+        $zhiying = 10;
+        $isgameover = false;
+        if($qihao>23 && $data[0]['currResult']==1){
+            $profit = bcadd($profit , $data[0]['nextProfit']);
+            $whereStr = " id=$newId  ";
+            $mydb->update($tableStr,array('profit'=>$profit),$whereStr);
+        }
+
         $bIndex = $data[0]['beishuIndex'];
-        if($bIndex>=count($beishu)){
-            $bIndex=0;
+        if($bIndex>=count($beishu)-1){
+            $bIndex=-1;
         }
 
         if($qihao<=22){
@@ -167,46 +177,26 @@ function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf){
 
             }
         }else{
-            if($data[0]['currResult']==1&&$data[0]['nextNum']>0){
-                $yuceData[$data[1]['function']]['currResult']=1;
+
+            if($zhiying<=$profit){
+                $isgameover = true;
+            }
+
+            if($profit<0 && $zhishun <= abs($profit)){
+                $isgameover = true;
+            }
+
+            if($isgameover){
                 $yuceData[$data[1]['function']]['nextBeishu']=1;
                 $yuceData[$data[1]['function']]['beishuIndex']=0;
                 $yuceData[$data[1]['function']]['nextRound']=1;
-
-                if(HOUSHAN == $data[0]['function']){
-                    $yuceData[$data[1]['function']]['nextData'] = ($newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
-                }else if(QIANSHAN == $data[0]['function']){
-                    $yuceData[$data[1]['function']]['nextData'] = ($newDataArray[0]+$newDataArray[1]+$newDataArray[2])%10 ;
-                }else{
-                    $yuceData[$data[1]['function']]['nextData'] = ($newDataArray[0]+$newDataArray[1]+$newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
-                }
-
-            }else if($data[0]['currResult']==1&&$data[0]['nextNum']<=0){
-
-                if($data[0]['nextRound']>=3){  //如果没中，并且是三期后
+                $yuceData[$data[1]['function']]['currResult']=0;
+            }else{
+                if($data[0]['currResult']==1&&$data[0]['nextNum']>0){
+                    $yuceData[$data[1]['function']]['currResult']=1;
                     $yuceData[$data[1]['function']]['nextBeishu']=1;
                     $yuceData[$data[1]['function']]['beishuIndex']=0;
                     $yuceData[$data[1]['function']]['nextRound']=1;
-
-                    $yuceData[$data[1]['function']]['currResult']=2;
-
-                    foreach ($allOldData as &$data2){
-                        if($data2[0]['currResult']==2){
-                            $yuceData[$data2[1]['function']]['nextBeishu']=1;
-                            $yuceData[$data2[1]['function']]['beishuIndex']=0;
-                            $yuceData[$data2[1]['function']]['nextRound']=1;
-                            $yuceData[$data2[1]['function']]['currResult']=1;
-
-                            if(HOUSHAN == $data2[0]['function']){
-                                $yuceData[$data2[1]['function']]['nextData'] = ($newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
-                            }else if(QIANSHAN == $data2[0]['function']){
-                                $yuceData[$data2[1]['function']]['nextData'] = ($newDataArray[0]+$newDataArray[1]+$newDataArray[2])%10 ;
-                            }else{
-                                $yuceData[$data2[1]['function']]['nextData'] = ($newDataArray[0]+$newDataArray[1]+$newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
-                            }
-                            break;
-                        }
-                    }
 
                     if(HOUSHAN == $data[0]['function']){
                         $yuceData[$data[1]['function']]['nextData'] = ($newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
@@ -215,23 +205,48 @@ function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf){
                     }else{
                         $yuceData[$data[1]['function']]['nextData'] = ($newDataArray[0]+$newDataArray[1]+$newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
                     }
-                }else{  //如果没中，并且还没到三期
-                    $yuceData[$data[1]['function']]['currResult']=1;
-                    $yuceData[$data[1]['function']]['nextRound']=$data[0]['nextRound']+1;
-                    $yuceData[$data[1]['function']]['nextBeishu']=$beishu[$bIndex+1];
-                    $yuceData[$data[1]['function']]['beishuIndex']=$bIndex+1;
+
+                }else if($data[0]['currResult']==1&&$data[0]['nextNum']<=0){
+                    if($data[0]['nextRound']>=3){  //如果没中，并且是三期后
+                        $yuceData[$data[1]['function']]['nextBeishu']=1;
+                        $yuceData[$data[1]['function']]['beishuIndex']=0;
+                        $yuceData[$data[1]['function']]['nextRound']=1;
+                        $yuceData[$data[1]['function']]['currResult']=2;
+
+                        foreach ($allOldData as &$data2){
+                            if($data2[0]['currResult']==2){
+                                $yuceData[$data2[1]['function']]['nextBeishu']=$beishu[$bIndex+1];
+                                $yuceData[$data2[1]['function']]['beishuIndex']=$bIndex+1;
+                                $yuceData[$data2[1]['function']]['nextRound']=1;
+                                $yuceData[$data2[1]['function']]['currResult']=1;
+
+                                if(HOUSHAN == $data2[0]['function']){
+                                    $yuceData[$data2[1]['function']]['nextData'] = ($newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
+                                }else if(QIANSHAN == $data2[0]['function']){
+                                    $yuceData[$data2[1]['function']]['nextData'] = ($newDataArray[0]+$newDataArray[1]+$newDataArray[2])%10 ;
+                                }else{
+                                    $yuceData[$data2[1]['function']]['nextData'] = ($newDataArray[0]+$newDataArray[1]+$newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
+                                }
+                                break;
+                            }
+                        }
+
+                        if(HOUSHAN == $data[0]['function']){
+                            $yuceData[$data[1]['function']]['nextData'] = ($newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
+                        }else if(QIANSHAN == $data[0]['function']){
+                            $yuceData[$data[1]['function']]['nextData'] = ($newDataArray[0]+$newDataArray[1]+$newDataArray[2])%10 ;
+                        }else{
+                            $yuceData[$data[1]['function']]['nextData'] = ($newDataArray[0]+$newDataArray[1]+$newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
+                        }
+                    }else{  //如果没中，并且还没到三期
+                        $yuceData[$data[1]['function']]['currResult']=1;
+                        $yuceData[$data[1]['function']]['nextRound']=$data[0]['nextRound']+1;
+                        $yuceData[$data[1]['function']]['nextBeishu']=$beishu[$bIndex+1];
+                        $yuceData[$data[1]['function']]['beishuIndex']=$bIndex+1;
+                    }
                 }
             }
 
-
-            if($qihao>23 && $data[0]['currResult']==1){
-                $whereStr = " id=$oldId";
-                $profit = $mydb->get_one($tableStr,$whereStr)['profit'];
-
-                $profit = bcadd($profit , $data[0]['nextProfit']);
-                $whereStr = " id=$newId  ";
-                $mydb->update($tableStr,array('profit'=>$profit),$whereStr);
-            }
         }
 
 

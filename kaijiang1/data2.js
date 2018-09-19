@@ -152,7 +152,7 @@ function run(conf){
 					
 				//调用写入func_ext接口
 				var option2={                                                                                               
-					host:"web.dianjinshuju.com",                                                                             
+					host:"localhost",
 					timeout:500000,                                                                                      
 					path: '/yuce/yuce.php',                   
 					headers:{                                                                                           

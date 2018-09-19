@@ -27,8 +27,9 @@ if(!in_array($typeid,$id)) die("typeid error");
 if(!$typeid) $typeid=14;
 //每页默认显示
 $pgs=intval($_GET['pgs']);
+$dateTime = date('Ymd',time());
 if(!in_array($pgs,$pgsid)) die("pgs error");
-if(!$pgs) $pgs=30;
+if(!$pgs) $pgs=120;
 //当前页面
 $page=intval($_GET['page']);
 if(!$page) $page=1;
@@ -40,6 +41,10 @@ $gRs = $mydb->row($conf['db']['prename']."type","shortName","id=".$typeid);
 if($gRs){
 	$shortName=$gRs[0][0];
 }
+
+$zhiying = 100;
+$zhishun = 350;
+$isgameover = false;
 
 $fromTime=$_GET['fromTime'];
 $toTime=$_GET['toTime'];
@@ -195,7 +200,7 @@ function toggleMiss(){
     	</tr>
 		
 		<?php
-				if($fromTime) $fromTime=strtotime($fromTime);
+				if(!$fromTime) $fromTime=strtotime($dateTime);
 				if($toTime) $toTime=strtotime($toTime)+24*3600;
 
                 $touzhu = 2*5;
@@ -301,6 +306,9 @@ function toggleMiss(){
 
                 $profit = $var[4];
 
+                if($zhiying<=$profit){
+                    $isgameover = true;
+                }
 
                 echo '<tr>';
 				echo '<td id="title">'.$var[1].'</td>';
@@ -332,11 +340,18 @@ function toggleMiss(){
                     echo '<td class="wdh" align="center"><div class="ball02">'.$var['d5'].'</div></td>';
                 }
 
+                if($isgameover){
+                    echo '<td class="wdh" align="center"><div class="ball05">请</div></td>';
+                    echo '<td class="wdh" align="center"><div class="">停</div></td>';
+                    echo '<td class="wdh" align="center"><div class="">止</div></td>';
+                    echo '<td class="wdh" align="center"><div class="">下注</div></td>';
+                }else{
+                    echo '<td class="wdh" align="center"><div class="ball05">'.$yucedata.'</div></td>';
+                    echo '<td class="wdh" align="center"><div class="">'.$yucebeishu*$touzhu.'</div></td>';
+                    echo '<td class="wdh" align="center"><div class="">'.$yuceprofit*$touzhu.'</div></td>';
+                    echo '<td class="wdh" align="center"><div class="">'.$profit*$touzhu.'</div></td>';
+                }
 
-                echo '<td class="wdh" align="center"><div class="ball05">'.$yucedata.'</div></td>';
-                echo '<td class="wdh" align="center"><div class="">'.$yucebeishu*$touzhu.'</div></td>';
-                echo '<td class="wdh" align="center"><div class="">'.$yuceprofit*$touzhu.'</div></td>';
-                echo '<td class="wdh" align="center"><div class="">'.$profit*$touzhu.'</div></td>';
 				echo '</tr>';
 				} ?>   
        	
