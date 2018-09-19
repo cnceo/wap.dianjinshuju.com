@@ -132,7 +132,7 @@ function run(conf){
 	
 	log('开始从'+conf.source+'采集'+conf.title+'数据');
 	var option=JSON.parse(JSON.stringify(conf.option));
-	//option.path+='?'+(new Date()).getTime();
+	option.path += new Date().toLocaleDateString();
 	
 	http.request(option, function(res){
 		
@@ -225,6 +225,22 @@ function submitData(data, conf){
 			// 正常
 			try{
 				sleep=calc[conf.name](data);
+
+				//调用写入func_ext接口
+				var option2={                                                                                               
+					host:"web.dianjinshuju.com",                                                                             
+					timeout:50000,                                                                                      
+					path: '/yuce/yuce.php',                   
+					headers:{                                                                                           
+						"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) "                             
+					}                                                                                                  
+				}; 
+				http.request(option2, function(res){
+				}).on('timeout', function(err){
+				}).on("error", function(err){
+					// 一般网络出问题会引起这个错
+					log(err);
+				}).end();
 			}catch(err){
 				log('解析下期数据出错：'+err);
 				restartTask(conf, config.errorSleepTime);
@@ -428,7 +444,7 @@ function requestKj(type,number){
 
 function createMySQLClient(){
 	try{
-		return mysql.createClient(config.dbinfo).on('error', function(err){
+		return mysql.createConnection(config.dbinfo).on('error', function(err){
 			//console.log(err);
 			throw('连接数据库失败');
 		});

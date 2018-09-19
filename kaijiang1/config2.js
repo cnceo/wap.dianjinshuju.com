@@ -10,7 +10,7 @@ exports.cp=[
 	option:{                                                                                                //
 		host:"ho.apiplus.net",                                                                              //
 		timeout:50000,                                                                                      //重
-		path: '/daily.do?token=tf84ad5ef02880ec8k&code=cqssc&format=json&date=2018-09-18',                   //庆
+		path: '/daily.do?token=tf84ad5ef02880ec8k&code=cqssc&format=json&date=',                   //庆
 		headers:{                                                                                           //时
 			"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) "                             //时
 		}                                                                                                   //彩
@@ -41,8 +41,8 @@ exports.submit={
 
 exports.dbinfo={
 	host:'localhost',
-	user:'root',
-	password:'',
+	user:'dianjinshuju',
+	password:'dYAd4KeDY6ctczmN',
 	database:'0xc'
 
 }
