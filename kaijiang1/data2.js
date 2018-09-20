@@ -529,39 +529,6 @@ function setPj(sqls, data){
 	
 }
 
-// 前台添加数据接口
-http.createServer(function(req, res){
-	
-	log('前台访问'+req.url);
-	var data='';
-	req.on('data', function(_data){
-		data+=_data;
-	}).on('end', function(){
-		data=querystring.parse(data);
-		var msg={},
-			hash=crypto.createHash('md5');
-		hash.update(data.key);
-		
-		//console.log(data);
-		if(encrypt_key==hash.digest('hex')){
-			delete data.key;
-			if(req.url=='/data/add'){
-				submitDataInput(data);
-			}else if(req.url=='/data/kj'){
-				//console.log(data);
-				calcJ(data, true)
-			}
-		}else{
-			msg.errorCode=1;
-			msg.errorMessage='校验不通过';
-		}
-		
-		res.writeHead(200, {"Content-Type": "text/json"});
-		res.write(JSON.stringify(msg));
-		res.end();
-	});
-	
-}).listen(8800);
 
 function submitDataInput(data){
 	log('提交从前台录入第'+data.number+'数据：'+data.data);
