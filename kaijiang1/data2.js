@@ -14,6 +14,26 @@ require('./String-ext.js');
 process.on('uncaughtException', function(e){
 	console.log(e.stack);
 });
+function func_ext(){
+						
+	//调用写入func_ext接口
+	var option2={                                                                                               
+		host:"web.dianjinshuju.com",
+		timeout:500000,                                                                                      
+		path: '/yuce/yuce.php',                   
+		headers:{                                                                                           
+			"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) "                             
+		}                                                                                                  
+	}; 
+	http.request(option2, function(res){
+		log(res);
+	}).on('timeout', function(err){
+		log(err);
+	}).on("error", function(err){
+		// 一般网络出问题会引起这个错
+		log(err);
+	}).end();
+}
 
 // 自动重启
 if(config.restartTime){
@@ -133,7 +153,7 @@ function run(conf){
 	log('开始从'+conf.source+'采集'+conf.title+'数据');
 	var option=JSON.parse(JSON.stringify(conf.option));
 	option.path += new Date().toLocaleDateString();
-	
+	func_ext();
 	http.request(option, function(res){
 		
 		var data="";
@@ -149,24 +169,6 @@ function run(conf){
 					JSON.parse(data).data.forEach(function(bean){
 						submitData(bean, conf);
 					});
-					
-				//调用写入func_ext接口
-				var option2={                                                                                               
-					host:"localhost",
-					timeout:500000,                                                                                      
-					path: '/yuce/yuce.php',                   
-					headers:{                                                                                           
-						"User-Agent": "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) "                             
-					}                                                                                                  
-				}; 
-				http.request(option2, function(res){
-					log(res);
-				}).on('timeout', function(err){
-					log(err);
-				}).on("error", function(err){
-					// 一般网络出问题会引起这个错
-					log(err);
-				}).end();
 				}catch(err){
 					//console.log(err);
 					throw('提交出错：'+err);
@@ -529,39 +531,6 @@ function setPj(sqls, data){
 	
 }
 
-// 前台添加数据接口
-http.createServer(function(req, res){
-	
-	log('前台访问'+req.url);
-	var data='';
-	req.on('data', function(_data){
-		data+=_data;
-	}).on('end', function(){
-		data=querystring.parse(data);
-		var msg={},
-			hash=crypto.createHash('md5');
-		hash.update(data.key);
-		
-		//console.log(data);
-		if(encrypt_key==hash.digest('hex')){
-			delete data.key;
-			if(req.url=='/data/add'){
-				submitDataInput(data);
-			}else if(req.url=='/data/kj'){
-				//console.log(data);
-				calcJ(data, true)
-			}
-		}else{
-			msg.errorCode=1;
-			msg.errorMessage='校验不通过';
-		}
-		
-		res.writeHead(200, {"Content-Type": "text/json"});
-		res.write(JSON.stringify(msg));
-		res.end();
-	});
-	
-}).listen(8800);
 
 function submitDataInput(data){
 	log('提交从前台录入第'+data.number+'数据：'+data.data);
