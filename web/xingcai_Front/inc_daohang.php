@@ -130,9 +130,9 @@
                     <li>
                         <a href="javascript:void(0);"><i class="i_icon-account"></i><b>账户管理</b><sup>Account</sup></a>
                         <div class="nav_child nav_child2">
-                            <p><a href="/index.php/record/search" icon="yxbb">投注记录</a></p>
+                            <!--<p><a href="/index.php/record/search" icon="yxbb">投注记录</a></p>
                             <p><a href="/index.php/report/coin" data="T-bdkh" icon="bdkh">帐变记录</a></p>
-                            <p><a href="/index.php/report/count" data="T-czxx" icon="czxx">盈亏报表</a></p>
+                            <p><a href="/index.php/report/count" data="T-czxx" icon="czxx">盈亏报表</a></p>-->
 							<p><a href="/index.php/safe/passwd" data="T-mmaq" icon="mmaq">密码安全</a></p>
 							<p><a href="/index.php/safe/info" data="T-bdkh" icon="bdkh">绑定卡号</a></p>
                         </div>
@@ -143,8 +143,8 @@
                         <div class="nav_child nav_child2">
                             <p><a href="/index.php/team/memberList" data="T-tdbb" icon="tdbb">会员列表</a></p>
 							<p><a href="/index.php/team/gameRecord" data="T-zcgl" icon="zcgl">团队记录</a></p>
-							<p><a href="/index.php/team/coin" data="T-bdkh" icon="bdkh">团队帐变</a></p>
-                            <p><a href="/index.php/team/report" data="T-yhlb" icon="yhlb">团队盈亏</a></p>
+							<!--<p><a href="/index.php/team/coin" data="T-bdkh" icon="bdkh">团队帐变</a></p>
+                            <p><a href="/index.php/team/report" data="T-yhlb" icon="yhlb">团队盈亏</a></p>-->
                             <p><a href="/index.php/team/addlink" data="T-tgsd" icon="tgsd">推广设定</a></p>
                         </div>
                     </li>

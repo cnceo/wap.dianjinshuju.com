@@ -74,7 +74,7 @@
 <!--										<li class="tree_list"><a href="/index.php/team/coin">团队帐变</a></li>-->
 <!--										<li class="tree_list"><a href="/index.php/team/report">团队盈亏</a></li>-->
 										<li class="tree_list"><a href="/index.php/team/memberList">用户列表</a></li>
-										<li class="tree_list"><a href="/index.php/team/addMember">注册管理</a></li>
+										<!--<li class="tree_list"><a href="/index.php/team/addMember">注册管理</a></li>-->
 										<li class="tree_list"><a href="/index.php/team/addlink">推广设定</a></li>
 										<li class="tree_list"><a href="/index.php/team/linkList">链接管理</a></li>
 										<li class="tree_list"><a href="/index.php/team/coinall">团队统计</a></li>

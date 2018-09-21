@@ -57,10 +57,10 @@
 <!--						<a class="reports_list_title" href="/index.php/report/coin">帐变记录</a>-->
 <!--						<div class="m_user_reports_child"></div>-->
 <!--					</li>-->
-					<li>
+					<!--<li>
 						<a class="reports_list_title" href="/index.php/report/count">盈亏报表</a>
 						<div class="m_user_reports_child"></div>
-					</li>	
+					</li>	-->
 					<li>
 						<a class="reports_list_title" href="/index.php/safe/info">绑定卡号</a>
 						<div class="m_user_reports_child"></div>
@@ -101,10 +101,10 @@
 						<a class="reports_list_title" href="/index.php/team/memberList">用户列表</a>
 						<div class="m_user_reports_child"></div>
 					</li>
-					<li>
+					<!--<li>
 						<a class="reports_list_title" href="/index.php/team/addMember">注册管理</a>
 						<div class="m_user_reports_child"></div>
-					</li>
+					</li>-->
 <!--					<li>-->
 <!--						<a class="reports_list_title" href="/index.php/team/gameRecord">团队记录</a>-->
 <!--						<div class="m_user_reports_child"></div>-->

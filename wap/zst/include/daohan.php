@@ -98,9 +98,9 @@
                     <dl class="lnstruction">
                         <dd>
                             <ul class="lot_list">
-                                <li class="tree_list"> <a href="/index.php/record/search">投注记录</a></li>
+                                <!--<li class="tree_list"> <a href="/index.php/record/search">投注记录</a></li>
                                 <li class="tree_list"> <a href="/index.php/report/coin">帐变记录</a></li>
-                                <li class="tree_list"> <a href="/index.php/report/count">盈亏报表</a></li>
+                                <li class="tree_list"> <a href="/index.php/report/count">盈亏报表</a></li>-->
                                 <li class="tree_list"><a href="/index.php/safe/info">绑定卡号 </a></li>
                                 <li class="tree_list"><a href="/index.php/safe/loginpasswd">登入密码</a></li>
                                 <li class="tree_list"><a href="/index.php/safe/passwd">提款密码</a></li>
