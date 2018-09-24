@@ -4,42 +4,23 @@
     <meta name="format-detection" content="telephone=no">
 <meta name="screen-orientation" content="portrait">
 <meta name="x5-orientation" content="portrait">
-    <title>桃花彩-官方网站</title>
+    <title>官方网站</title>
     <link rel="stylesheet" href="/css/nsc_m/normalize.css?v=1.17.1.12">
 	<script type="text/javascript" src="/skin/js/jquery-1.8.0.min.js"></script>
 	<script type="text/javascript" src="/skin/js/onload.js"></script>
 <script type="text/javascript" src="/skin/main/reglogin.js"></script>
 <script type="text/javascript" src="/skin/js/gamecommon.js"></script>
    <style media="screen">
-        html,body{height:100%;font-family:microsoft yahei;background-color:#fff;background-image:url(/images/nsc_m/login/login_bg.png);background-repeat:no-repeat;background-size:100%;background-attachment:fixed;background-position:0 0;}
-        ul,li{list-style-type:none;margin:0;padding:0;}
-        .container{height:100%;}
-        header img{display:block;height:4.74rem;padding:3.55rem 0 1.7rem;margin:0 auto;}
-        #form-area form{width:20.55rem;margin:0 auto;}
-        #form-area dl{width:100%;height:2.96rem;/*background:url(/images/nsc_m/login/input_line.png) 0 bottom repeat-x;*/border-bottom:0.15rem solid rgba(238,238,238,0.5);position:relative;}
-        #form-area dt{position:absolute;}
-        #form-area dd{display:block;margin:0 0 0 4.18rem;padding:0;}
-        #form-area input::-webkit-input-placeholder{color:#fff9ed;transition:color .15s;-webkit-transition:color .15s;-moz-transition:color .15s;}
-        #form-area .has-error::-webkit-input-placeholder{color:#ffdb7d;}
-        #form-area input{border:none;outline:none;width:100%;height:2.8rem;color:#f9f2e5;background:none; font-size:1.2rem;}
-        #form-area .btn-submit{width:100%;border:none;outline:none;height:3.07rem;margin-top:3.7rem;font-size:1.78rem;letter-spacing:1rem;background-color:#7A7A7A;color:#fff;}
-        #form-area label img{position:absolute;}
-        #form-area label[for='uname'] img{width:1.85rem;left:0.9rem;top:0.5rem;}
-        #form-area label[for='upass'] img{width:1.35rem;left:1.15rem;top:0.6rem;}
-        #form-area label[for='code'] img{width:1.85rem;left:0.9rem;top:0.5rem;}
-        #form-area .validate-code{position:relative;}
-        #dvcode{position:absolute;right:0;bottom:0.61rem;z-index:99;}
-        footer .tip-messages{text-align:center;font-size:0.7rem;color:#ae9287;margin:2.2rem 0 4rem;}
-        footer .download-sticky{position:fixed;z-index: 101;left:0;bottom:0;width:100%;height:2.92rem;background:url(/images/nsc_m/login/down_bg.png) repeat;}
-        footer .download-sticky ul{display:block;margin-top:0.5rem;overflow:hidden;}
-        footer .download-sticky li{float:left;color:#fff;font-size:0.89rem;}
-        footer .download-sticky li span{vertical-align:middle;}
-        footer .download-sticky li img{vertical-align:middle;}
-        footer .download-sticky a{text-decoration:none;color:#fff;}
-        footer .download-sticky .close-btn img{width:0.8rem;margin:0.55rem 0 0 0.5rem;}
-        footer .download-sticky .down-logo img{width:2rem;margin-left:1.7rem;margin-right:0.7rem;}
-        footer .download-sticky .platform-icon{float:right;margin-right:0.8rem;}
-        footer .download-sticky .platform-icon img{width:4.67rem;vertical-align:-0.6rem;}
+       html{width:100%;height: 100%;}
+       body {margin:0;background:url(/images/timg.jpg) no-repeat center;background-size:100% 100%;}
+       .logo{width:110px;height:135px;background-color:#fff;display:block;margin:0 auto;margin-top:30px;margin-bottom:30px;}
+       input{display:block;margin:0 auto;width:80%;margin-bottom:30px;height:40px;background:rgba(157,157,157,0.7);padding:0 3%;border:none;}
+       input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #B1E8FF;}
+       .check{width:86%;margin:0 auto;margin-right: 17px;display:flex;justify-content:flex-start;align-items:center;}
+       .check input{width:40%;margin:0;display:inline-block;}
+       .check label{display:inline-block;width:100px;height:40px;background:rgba(157,157,157,0.9);margin-left:15px;line-height:40px;color:#B4F0FF;text-align:center;font-size:25px;}
+       button{width:86%;height:40px;text-align:center;font-size:25px;color:#fff;padding:0;display:block;margin:0 auto;line-height:40px;margin-top:35px;background:rgba(23,109,113,0.8);border:none;}
+       .bottom{position:absolute;bottom:30px;color:#B1E8FF;text-align:center;width:100%;}
     </style>
 	<!--<script>alert('咨询QQ：925475');</script>-->
     <script type="text/javascript">
@@ -159,40 +140,23 @@
             }
 
         }
-    </script>
-<link href="/js/nsc_m/libs/need/layer.css?2.0" type="text/css" rel="styleSheet" id="layermcss"></head>
+    </script></head>
+
 <body>
-    <div class="container">
-        <header><img src="/images/nsc_m/login/logo.png?v=1.17.1.12" alt="logo"></header>
-        <section id="form-area">
-            <form action="/index.php/user/logined" method="post" onajax="userBeforeLogin" enter="true" call="userLogin" target="ajax">
-                <dl>
-                    <dt><label for="uname"><img src="/images/nsc_m/login/icon_user.png?v=1.17.1.12" alt=""></label></dt>
-                    <dd><input type="text" id="username" name="username" placeholder="输入账号"></dd>
-                </dl>
-                <dl>
-                    <dt><label for="upass"><img src="/images/nsc_m/login/icon_pass.png?v=1.17.1.12" alt=""></label></dt>
-                    <dd><input type="password" id="password" name="password" placeholder="输入密码"></dd>
-                </dl>
-                <dl>
-                    <dt><label for="code"><img src="/images/nsc_m/login/icon_code.png?v=1.17.1.12" alt=""></label></dt>
-                    <dd class="validate-code">
-                        <input type="text" id="vcode" name="vcode" maxlength="4" placeholder="输入验证码" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
-                        <img title="点击刷新" style="cursor:pointer;" id="dvcode" name="dvcode" src="/index.php/user/vcode/<?=$this->time?>">
-                    </dd>
-					
-            
-                </dl>
-                <button class="btn-submit" type="submit" data-form-sbm="1483930096400.321">登录</button>
-            </form>
-        </section>
-        <footer>
-            <div class="tip-messages">
-                未满18周岁禁止购买<br>
-                Copyright © SycPt  桃花彩 版权所有
-            </div>
-      
-        </footer>
-    </div>
-    <script type="text/javascript" src="/js/nsc_m/libs/layer.js?v=1.17.1.12"></script>
-</body></html>
+<img src="/images/logo.png" class="logo">
+<form action="/index.php/user/logined" method="post" onajax="userBeforeLogin" enter="true" call="userLogin" target="ajax">
+<input type="text" id="username" name="username" placeholder="请输入账号">
+<input type="password" id="password" name="password" placeholder="请输入密码">
+<div class="check">
+    <input type="text" id="vcode" name="vcode" maxlength="4"  placeholder="输入验证码" class="check" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+    <label><img title="点击刷新" style="cursor:pointer;" id="dvcode" name="dvcode" src="/index.php/user/vcode/<?=$this->time?>"></label>
+</div>
+<button type="submit">登录</button>
+</form>
+<div class="bottom">
+    <p>查看点金EA服务协议</p>
+    <p>copyright by www.dianjinshuju.com</p>
+</div>
+<script type="text/javascript" src="/js/nsc_m/libs/layer.js?v=1.17.1.12"></script>
+</body>
+</html>
