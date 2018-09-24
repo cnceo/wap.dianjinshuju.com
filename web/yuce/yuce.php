@@ -104,13 +104,9 @@ function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf){
         $index = 1;
         foreach ($all23Datas as $value){
             $oldData[$value]["currResult"] = $index;
-            $oldData[$value]["nextProfit"] = 1;
-            $oldData[$value]["nextRound"] = 1;
-            $oldData[$value]["nextBeishu"] = 1;
-            $oldData[$value]["beishuIndex"] = 0;
-              if($index==3){
-                  $oldData[$value]["currResult"] = 0;
-              }
+            if($index==3){
+                $oldData[$value]["currResult"] = 0;
+            }
             $index++;
         }
         $whereStr = " id=$oldId";
