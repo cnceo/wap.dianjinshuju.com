@@ -104,10 +104,6 @@ function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf){
         $index = 1;
         foreach ($all23Datas as $value){
             $oldData[$value]["currResult"] = $index;
-            $oldData[$value]["nextProfit"] = 1;
-            $oldData[$value]["nextRound"] = 1;
-            $oldData[$value]["nextBeishu"] = 1;
-            $oldData[$value]["beishuIndex"] = 0;
             if($index==3){
                 $oldData[$value]["currResult"] = 0;
             }
@@ -118,7 +114,9 @@ function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf){
     }
 
 
-
+    if($qihao == 23){
+        log('aaa');
+    }
     //预测的25期数据，放入24期func_ext数据
     $allOldData = [array($oldData[QIANSHAN],$yuceData[QIANSHAN]),array($oldData[HOUSHAN],$yuceData[HOUSHAN]),array($oldData[ZHONGHE],$yuceData[ZHONGHE])];
 
