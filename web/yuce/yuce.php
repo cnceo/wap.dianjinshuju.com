@@ -103,11 +103,15 @@ function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf){
         krsort($all23Datas);
         $index = 1;
         foreach ($all23Datas as $value){
-          $oldData[$value]["currResult"] = $index;
-          if($index==3){
-              $oldData[$value]["currResult"] = 0;
-          }
-          $index++;
+            $oldData[$value]["currResult"] = $index;
+            $oldData[$value]["nextProfit"] = 1;
+            $oldData[$value]["nextRound"] = 1;
+            $oldData[$value]["nextBeishu"] = 1;
+            $oldData[$value]["beishuIndex"] = 0;
+              if($index==3){
+                  $oldData[$value]["currResult"] = 0;
+              }
+            $index++;
         }
         $whereStr = " id=$oldId";
         $mydb->update($tableStr,array('func_ext'=>json_encode($oldData)),$whereStr);
