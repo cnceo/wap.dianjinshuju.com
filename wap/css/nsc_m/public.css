@@ -1,0 +1,30 @@
+*{margin:0;padding: 0;}
+html,body{font-family: 'Microsoft YaHei', sans-serif;font-size: 18px;overflow-x: hidden;overflow-y:auto;}
+.clearfix{*zoom:1}
+.clearfix:after{display:block;visibility:hidden;clear:both;height:0;content:""}
+.oneline{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.new_show{display: block;}
+.new_hide{display: none;}
+ul{ margin-bottom: 0;}
+li{list-style: none;}
+.text-center{text-align: center;}
+.text-left{text-align: left;}
+.text-right{text-align: right;}
+.float-left{float: left;}
+.float-right{float: right;}
+.im_cen{display: block;text-align: center;}
+.mg_top30{display:block;margin-top: 30px;}
+.mgt20{margin-top:20px;}
+.te_in2{text-indent:2em;}
+a:hover,a:link{text-decoration: none;}
+a:focus {outline: none;}/*去除ie、火狐浏览器会有虚线框*/
+
+
+
+
+
+
+
+
+
+

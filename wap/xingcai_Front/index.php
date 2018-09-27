@@ -1,314 +1,166 @@
-<html xmlns="http://www.w3.org/1999/xhtml" style="font-size: 15.525px;"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
-<title>桃花彩-官方网站</title>
-<meta name="keywords" content="">
-<meta name="format-detection" content="telephone=no">
-<meta name="screen-orientation" content="portrait">
-<meta name="x5-orientation" content="portrait">
-<meta nam="description" content="">
-<link rel="stylesheet" href="/css/nsc_m/res.css?v=1.16.12.11">
-<link rel="stylesheet" href="/css/nsc_m/idangerous.swiper.css?v=1.16.12.11">
-<link href="/js/nsc_m/need/layer.css?2.0" type="text/css" rel="styleSheet" id="layermcss">
-<script type="text/javascript" src="/js/nsc/jquery-1.7.min.js?v=1.16.12.11"></script>
-<script>var TIP=true;</script>
-<script type="text/javascript" src="/skin/js/onload.js"></script>
-<script type="text/javascript" src="/skin/js/function.js"></script>
-
- <script type="text/javascript" src="/js/nsc/common.js?v=1.16.12.11"></script>
-<script type="text/javascript" src="/js/nsc_m/layer.js?v=1.16.12.11"></script>
-<script type="text/javascript" src="/js/nsc_m/res.js?v=1.16.12.11"></script>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>注册</title>
+    <link rel="stylesheet" href="/css/nsc_m/public.css">
+    <style type="text/css">
+        html{width:100%;height:100%;}
+        body {background:url(/images/nsc_m/lit.jpg) no-repeat center;background-size:100% 100%;}
+        .head{width:100%;height:64px;background-color:#004BC8;display:flex;align-items:center;justify-content:space-between;}
+        .head label{color:#fff;line-height:64px;font-size:16px;}
+        .head .more{display:flex;align-items:center;justify-content:space-around;width:30px;margin-right:15px;}
+        .head .more span{background-color:#fff;width:6px;height:6px;border-radius:50%;display:inline-block;}
+        .Advertisement{width:100%;}
+        .broadcast{border-bottom:1px solid #6BA092;padding:0 5px;display:flex;align-items:center;}
+        .broadcast img{width:40px;height:40px;}
+        .broadcast a{width:100%;height:40px;line-height:40px;background-color:#f3fbfe;color:#000;font-size:12px;display:inline-block;text-align:center;}
+        ul{margin:20px 0 60px;}
+        ul li{width:25%;height:140px;font-size:14px;margin:0 4%;float:left;}
+        ul li .top{text-align:center;background:rgba(177,202,230,0.3);padding:2px 0 0 2px;margin-bottom:2px;}
+        ul li .top .title{background:rgba(173,203,229,0.7);padding:5px 0;}
+        ul li .top .description{margin-top:10px;height:60px;}
+        ul li a{background-color:#ff7800;color:#fff;width:100%;text-align:center;display:inline-block;padding:5px 0;}
+        .tab{position:fixed;bottom:0;width:100%;height:50px;line-height:50px;background-color:#fff;z-index:2;}
+        .tab a{width:33%;display:inline-block;float:left;text-align:center;color:#0048C8;}
+        .tab a.active{color:#fff;background-color:#0048C8;}
+        .preview{box-sizing:border-box;width:100%;height:100%;background:rgba(0,0,0,0.8);position:fixed;left:0;top:64px;padding:10px 15px 0 35px;z-index:1;display:none;}
+        .preview .closePreview{color:#ffd9b5;text-align:right;line-height:30px;}
+        .preview .product p{color:#ffd9b5;text-align:left;line-height:30px;}
+        .preview .price{border:1px solid #fff;text-align:left;padding:10px 0 0 20px;margin:10px 0 0;}
+        .preview .price p{margin-bottom:10px;}
+        .preview .price .pre{color:#dafff7;}
+        .preview .price .num{color:#ffffb9;font-size:16px;}
+        .preview .summary{color:#fff;font-size:16px;box-sizing:border-box;margin-top:10px;}
+        .preview .summary span{padding:5px;background-color:#ffa800;margin-right:2px;white-space:nowrap;margin-bottom:5px;display:inline-block;}
+        .preview .description{color:#fff;text-indent:2em;font-size:14px;margin-top:15px;}
+        .preview .buy{position:fixed;bottom:60px;color:#fff;}
+        .preview .buy button{border:none;padding:8px;background-color:#ffa800;color:#fff;margin-left:15px;font-size:16px;}
+    </style>
 </head>
-<script type='text/javascript'>
- function zxkf(){
-	<?php if($this->settings['kefuStatus']){ ?>
-	var newWin=window.open("<?=$this->settings['kefuGG']?>");
-	<?php }else{?>
-	xingcai("客服系统维护中");
-	<?php }?>
-	return false;
- }
-</script> 
-   <body style="overflow-x: visible;">
-	<!-- 代码部分begin -->
-	<div id="body" class="">
-		<header class="header">
-	<a href="/"><img class="logo" src="/images/nsc_m/index/logo.png?v=1.16.12.11"></a>
-	<!-- <a class="m-return" href="javascript:checkbackspace();">返回</a> -->
-	<span class="btn-slide-bar"></span>
-	
-	<div class="wercom ">
-        <a class="uc_icon" href="/index.php/safe/Personal"></a><i class="ui_msgnum" style="display:none">0</i>
+
+<body>
+<div class="head">
+    <img src="/images/nsc_m/headLogo.png">
+    <label>欢迎您！niuoo100</label>
+    <div class="more">
+        <span></span><span></span><span></span>
     </div>
-</header>
-<!--侧导航 -->
-
-
-        <?php include 'include/daohan.php'; ?>
-
-
-
-		<div class="shady" style="display: none;"></div>		<div class="m-prompt" style="overflow: hidden; display: none;">
-			<img src="/images/nsc_m/index/question.png?v=1.16.12.11">
-			<a href="javascript:;"></a>
-		</div>
-		<section class="wraper-page" style="overflow: visible;">
-		<!-- 客服 -->
-		<a class="customer" href="javascript:void(0)" onClick="zxkf();" target="_blank"></a>
-		<!-- 客服 -->
-		<!-- 轮播 -->
-		<div class="swiper-container">
-		  <div class="swiper-wrapper" style="width: 3312px; height: 102.016px; transform: translate3d(-2070px, 0px, 0px); transition-duration: 0.3s;">
-		  <div class="swiper-slide swiper-slide-duplicate" style="width: 414px; height: 102.016px;">
-                         	<a href="/?controller=promotions&amp;action=main&amp;tag=details#">
-                                <img src="/images/uploads/1/yongjin.jpg">
-                            </a>
-                        </div>
-		                                               <div class="swiper-slide" style="width: 414px; height: 102.016px;">
-                         	<a href="/index.php/safe/Personal">
-                                <img src="/images/uploads/1/2.jpg">
-                            </a>
-                        </div>
-                                            <div class="swiper-slide" style="width: 414px; height: 102.016px;">
-                         	<a href="/index.php/index/game/20">
-                                <img src="/images/uploads/1/3.jpg">
-                            </a>
-                        </div>
-                                            <div class="swiper-slide" style="width: 414px; height: 102.016px;">
-                         	<a href="/?controller=promotions&amp;action=main&amp;tag=extremepoints#">
-                                <img src="/images/uploads/1/7.jpg">
-                            </a>
-                        </div>
-                                            <div class="swiper-slide" style="width: 414px; height: 102.016px;">
-                         	<a href=" /?nav=pk10&amp;flaglot=pk10#">
-                                <img src="/images/uploads/1/8.jpg">
-                            </a>
-                        </div>
-						</div>
-		<div class="pagination">
-		<span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span>
-		<span class="swiper-pagination-switch"></span><span class="swiper-pagination-switch"></span>
-		<span class="swiper-pagination-switch swiper-visible-switch swiper-active-switch"></span>
-		<span class="swiper-pagination-switch"></span>
-		</div>
-		</div>
-		<!-- end轮播 -->
-		<div class="v-moeny">
-			<div class="you-money">
-                <span class="t_money rounded" title="0.0000">
-                    <div class="show-money" style="display: block;"><i>您的余额</i> <span id="refff" title="0.0000"><b>￥0.0000</b></span>
-                    <a href="javascript:;" title="隐藏余额">
-                     <i class="ic-unlook" title="隐藏余额"></i>
-                </a></div>
-                    <div class="hide-money" style="display: none;"><i>您的余额</i> <span><b>￥ ************</b></span>
-                    	<a href="javascript:;" title="隐藏余额">
-		                    <i class="ic-unlook" title="隐藏余额"></i>
-		                </a>
-                    </div>
-                </span> 
-                
-			</div>
-			<div class="chongzhi">
-				<a class="rech" href="/index.php/cash/recharge">充值</a>
-				<a class="withraw" href="/index.php/cash/toCash">提现</a>
-			</div>
-		</div>
-		<!-- 选项卡 -->
-		<div class="grandient-line"></div>
-		<div class="moTab">
-			<div class="Tab-nav">
-				<div class="cur">热门彩票</div>
-				<div>全部彩票</div>
-			</div>
-			<div class="Tab-content" style="display: block;">
-			<ul class="lotteryList">
-				<li>
-					<div class="lotteryBox">
-<!--							<a class="cq_Ssc" href="/index.php/index/game/1/2/12">-->
-							<a class="cq_Ssc" href="/zst/?typeid=1">
-
-							</a>
-							<i class="smDot">热</i>
-							<p class="lottName">重庆时时彩预测</p>
-						</div>
-				</li>
-	
-				<!--<li>
-					<div class="lotteryBox">
-							<a class="tj_ssc" href="/index.php/index/game/60/2/12">
-								
-							</a>
-							<i class="smDot">热</i>
-							<p class="lottName">天津时时彩</p>
-						</div>
-				</li>
-				<li>
-					<div class="lotteryBox">
-							<a class="xj_ssc" href="/index.php/index/game/12/2/12">
-								
-							</a>
-							<i class="smDot">热</i>
-							<p class="lottName">新疆时时彩</p>
-						</div>
-				</li>
-				<li>
-					<div class="lotteryBox">
-							<a class="hn_1fc" href="/index.php/index/game/80/59/193">
-								
-							</a>
-							<i class="smDot">热</i>
-							<p class="lottName">腾讯分分彩</p>
-						</div>
-				</li>
-				
-				
-				<li>
-					<div class="lotteryBox">
-							<a class="bj_PK10" href="/index.php/index/game/20">
-							
-							</a>
-							<i class="smDot">新</i>
-							<p class="lottName">北京PK拾</p>
-						</div>
-				</li>-->
-				
-			</ul>
-				
-			</div>
-			<!-- 游戏 -->
-			<div class="Tab-content">
-				<ul class="lotteryList">
-				<li>
-					<div class="lotteryBox">
-<!--							<a class="cq_Ssc" href="/index.php/index/game/1/2/12">-->
-                           <a class="cq_Ssc" href="/zst/?typeid=1">
-								
-							</a>
-							<i class="smDot">热</i>
-							<p class="lottName">重庆时时彩预测</p>
-						</div>
-				</li>
-				
-				<!--<li>
-					<div class="lotteryBox">
-							<a class="tj_ssc" href="/index.php/index/game/60/12/12">
-
-							</a>
-							<i class="smDot">热</i>
-							<p class="lottName">天津时时彩</p>
-						</div>
-				</li>
-				<li>
-					<div class="lotteryBox">
-							<a class="xj_ssc" href="/index.php/index/game/12/12/12">
-
-							</a>
-							<i class="smDot">热</i>
-							<p class="lottName">新疆时时彩</p>
-						</div>
-				</li>
-				<li>
-					<div class="lotteryBox">
-							<a class="hn_1fc" href="/index.php/index/game/80/59/193">
-
-							</a>
-							<i class="smDot">热</i>
-							<p class="lottName">腾讯分分彩</p>
-						</div>
-				</li>-->
-				
-				</ul>
-			</div>
-		
-		<!-- end选项卡 -->
-		</div>
-		    <div class="res_fx_bottm chongzhi_f_botm">
-      <b class="cz_close"></b>
-      
+</div>
+<img src="/images/nsc_m/advertisement.png" class="Advertisement">
+<div class="broadcast">
+    <img src="/images/nsc_m/horn.png"><a href="#">点金将于2018年10月1日推出EA2000，点击查看详情</a>
+</div>
+<ul>
+    <li>
+        <div class="top">
+            <p class="title">EA2000</p>
+            <div class="description">
+                <p>本金2000</p>
+                <p>月盈70%-150%</p>
+            </div>
+        </div>
+        <a href="#">了解详情</a>
+    </li>
+    <li>
+        <div class="top">
+            <p class="title">分分刷量</p>
+            <div class="description">
+                <p>本金自定</p>
+                <p>日刷10-20倍</p>
+            </div>
+        </div>
+        <a href="#">了解详情</a>
+    </li>
+    <li>
+        <div class="top">
+            <p class="title">极限回补</p>
+            <div class="description">
+                <p>本金500</p>
+                <p>日盈10%以上</p>
+            </div>
+        </div>
+        <a href="#">了解详情</a>
+    </li>
+    <li>
+        <div class="top">
+            <p class="title">算法开发</p>
+            <div class="description">
+                <p>时时彩</p>
+                <p>赛车</p>
+                <p>快3</p>
+            </div>
+        </div>
+        <a href="#">了解详情</a>
+    </li>
+    <li>
+        <div class="top">
+            <p class="title">自动下单</p>
+            <div class="description">
+                <p>15天开发时间</p>
+                <p>平台自选</p>
+            </div>
+        </div>
+        <a href="#">了解详情</a>
+    </li>
+    <li>
+        <div class="top">
+            <p class="title">合作共赢</p>
+            <div class="description">
+                <p>推广</p>
+                <p>联运</p>
+                <p>众筹</p>
+            </div>
+        </div>
+        <a href="#">了解详情</a>
+    </li>
+</ul>
+<div class="tab">
+    <a href="#" class='active'>首页</a>
+    <a href="/zst/?typeid=1" style='color:#ff7800'>预测</a>
+    <a href="/index.php/safe/Personal">我的</a>
+</div>
+<div class="preview">
+    <p class='closePreview'>关闭</p>
+    <div class="product">
+        <p>EA2000</p>
+        <p>2000本金，月盈70%-150%</p>
     </div>
-		</section>
-	</div>
-	<!-- 代码部分end -->
+    <div class="price">
+        <p class="pre">预售：598/月 1298/季 3998/年</p>
+        <p class="num">名额限3000人，目前剩余2800人</p>
+    </div>
+    <div class="summary">
+        <span style="background-color:#004BC8;">承诺服务</span>
+        <span>24H服务</span>
+        <span>免费升级</span>
+        <span>亏损退费补偿</span>
+    </div>
+    <p class="description">
+        实盘观摩https://www.fxunion.org/3103 IC实盘开始于7.3日，入金5000日收益10%左右，目前收益已达201%，最大回撤为22.6%，浮亏25%左右，高收益由AE自动交易完成，适时提取本金，让利润奔跑。敬请关注！一个能稳定赢利的EA自动交易程序帮助投资者做到1-999%年化收益。本金交易允许最大回撤25%，提出本金留利润交易允许最大回撤35%。
+    </p>
+    <div class="buy">
+        2018年10月1日前交付使用 <button>立即购买</button>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="/newskin/liaotian/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
 
-   	<script type="text/javascript" src="/js/nsc_m/idangerous.swiper.min.js?v=1.16.12.11"></script>
-    <script type="text/javascript" src="/js/nsc/main.js?v=1.16.12.11"></script>
-    <script type="text/javascript">
-	    $(".cz_close").click(function(){
-        $(".chongzhi_f_botm").hide();
-    })
-    	var mySwiper = new Swiper('.swiper-container',{
-		    loop: true,
-			autoplay: 3000,
-			pagination:'.pagination',
-			paginationClickable:true
-  		});
+    $(function() {
+        $('.tab a').click(function(){
+            $(this).addClass('active').siblings('a').removeClass('active');
+        })
+        $('ul li a').click(function(){
+            $('.preview').css('display','block')
+        })
+        $('.preview .closePreview').click(function(){
+            $('.preview').css('display','none')
+        })
+    });
 
-  		function m_loginout(){
-            layer.open({
-                content:'您需要退出账号吗？',
-                btn:['退出','取消'],
-                yes:function(){
-                    window.location.href='/index.php/user/logout'
-                }
-            })
-        }
-         refreshMoney();
-         //选项卡
-        $(".Tab-content").eq(0).show();
-        $(".Tab-nav div").click(function(){
-	        $(".Tab-content").hide();
-	        $(".Tab-nav div").removeClass("cur");
-	        $(this).addClass("cur");
-	        $(".Tab-content").eq($(this).index()).show()
-        });
-        //隐藏金额
-	  	(function(){
-		    var $ref = $("#refff"),$refresh = $(".ic-refresh"),$showMoney = $(".show-money"),$hideMoney = $(".hide-money");
-		    	$hide = $(".ic-unlook");
-		    var cvis = getCookie("hide");
-		    if(cvis === "true"){
-		    	$showMoney.hide();
-		    	$hideMoney.show();
-		      	$refresh.css("display","none");
-		      	$hide.addClass("hide");
-		      	$hide.attr("title","显示余额");
-		    }else{
-		    	$refresh.css("display","inline-block");
-		    	$hide.attr("title","隐藏余额");
-		    	$showMoney.show();
-		    	$hideMoney.hide();
-		    }
-		    $hide.on("click",function(){ 
-		      	var vis = $showMoney.css("display");
-		      	if(vis == "none"){
-			        setCookie("hide","false");
-			        $showMoney.show();
-		    		$hideMoney.hide();
-			        $refresh.css("display","inline-block");
-			        $hide.removeClass("hide");
-			        $hide.attr("title","隐藏余额");        
-			        refreshMoney();
-		      	}else{
-			        setCookie("hide","true");
-			        $showMoney.hide();
-		    		$hideMoney.show();  
-			        $refresh.css("display","none");
-			        $hide.addClass("hide");
-			        $hide.attr("title","显示余额");
-		      	}
-		    });
-		    var pormpt = getCookie("sex")
-		    if(pormpt == "true"){
-		    	$(".m-prompt").hide(0);
-			}else{
-			   $(".m-prompt").show(0);
-			}
-		    $(".m-prompt a").on("click",function(){
-		    	setCookie("sex","true");
-		    	$(".m-prompt").hide();
-		    })
+</script>
 
-	  	})();
-	  
-    </script>
-</body></html>
+</html>
