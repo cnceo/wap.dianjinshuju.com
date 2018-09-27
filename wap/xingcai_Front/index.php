@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>注册</title>
+    <title>主页</title>
     <link rel="stylesheet" href="/css/nsc_m/public.css">
     <style type="text/css">
         html{width:100%;height:100%;}
