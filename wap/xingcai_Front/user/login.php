@@ -12,7 +12,7 @@
 <script type="text/javascript" src="/skin/js/gamecommon.js"></script>
    <style media="screen">
        html{width:100%;height: 100%;}
-       body {margin:0;background:url(/images/timg.jpg) no-repeat center;background-size:100% 100%;}
+       body {width:100%;height: 100%;margin:0;background:url(/images/timg.jpg) no-repeat center;background-size:100% 100%;}
        .logo{width:110px;height:135px;background-color:#fff;display:block;margin:0 auto;margin-top:30px;margin-bottom:30px;}
        input{display:block;margin:0 auto;width:80%;margin-bottom:30px;height:40px;background:rgba(157,157,157,0.7);padding:0 3%;border:none;}
        input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #B1E8FF;}
