@@ -38,6 +38,15 @@
         .preview .description{color:#fff;text-indent:2em;font-size:14px;margin-top:15px;}
         .preview .buy{position:fixed;bottom:60px;color:#fff;}
         .preview .buy button{border:none;padding:8px;background-color:#ffa800;color:#fff;margin-left:15px;font-size:16px;}
+        #side{width:50%;height:100%;background:rgba(0,0,0,0.8);position:fixed;left:100%;top:0;z-index:3;transition:.3s;}
+        #side p{color:#aecfff;padding:0 10px 0 25px;line-height:50px;border-bottom:1px solid #53cece;}
+        #side p a{color:#aecfff;}
+        #side .halfWidthLink{padding:10px 10px 10px 25px;border-bottom:1px solid #53cece;}
+        #side .halfWidthLink a{color:#fff;font-size:12px;width:48%;white-space:nowrap;display:inline-block;}
+        #side .halfWidthLink a:nth-child(2n){text-align:right;}
+        #side .allWidthLink{padding:10px 10px 10px 25px;border-bottom:1px solid #53cece;}
+        #side .allWidthLink a{color:#fff;font-size:12px;width:100%;white-space:nowrap;display:inline-block;}
+        #side .signOut{color:#fff;font-size:12px;position:absolute;right:5px;bottom:10px;}
     </style>
 </head>
 
@@ -45,7 +54,7 @@
 <div class="head">
     <img src="/images/nsc_m/headLogo.png">
     <label>欢迎您！niuoo100</label>
-    <div class="more">
+    <div class="more" id="more">
         <span></span><span></span><span></span>
     </div>
 </div>
@@ -145,6 +154,38 @@
         2018年10月1日前交付使用 <button>立即购买</button>
     </div>
 </div>
+<div id="side">
+    <p><a href="index.html">首页</a></p>
+    <p>用户中心</p>
+    <div class="halfWidthLink">
+        <a href="#">> 登录密码</a>
+        <a href="#">> 提款密码</a>
+        <a href="#">> 绑定卡号</a>
+        <a href="#">> 充值提现</a>
+    </div>
+    <p>团队管理</p>
+    <div class="halfWidthLink">
+        <a href="#">> 推广链接</a>
+        <a href="#">> 用户列表</a>
+        <a href="#">> 手动注册</a>
+        <a href="#">> 团队统计</a>
+    </div>
+    <p>点金产品</p>
+    <div class="allWidthLink">
+        <a href="#">> 重庆时时彩五星定位预测</a>
+        <a href="#">> 点金EA2000</a>
+        <a href="#">> 点金分分彩刷量模拟</a>
+        <a href="#">> 24小时回补极限算法</a>
+    </div>
+    <div class="allWidthLink" style="border:none;">
+        <a href="#">微信客服：dianjinshuju99</a>
+        <a href="#">QQ客服：302288999</a>
+        <a href="#">点金①群：302288999</a>
+        <a href="#">点金②群：302288999</a>
+        <a href="#">商务合作：301199</a>
+    </div>
+    <a class="signOut" href="login.html">退出登录</a>
+</div>
 </body>
 <script type="text/javascript" src="/newskin/liaotian/jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
@@ -159,6 +200,26 @@
         $('.preview .closePreview').click(function(){
             $('.preview').css('display','none')
         })
+        $('body').bind('click', function(event) {//侧边菜单栏
+            // IE支持 event.srcElement ， FF支持 event.target
+            // var evt = event.srcElement ? event.srcElement : event.target;
+            // var evtParent = event.srcElement ? event.srcElement : event.target;
+            var evt = $(event)[0].target;
+            var evtParent = $(event)[0].target.parentElement;
+            var evtParentParent = $(event)[0].target.parentElement.parentElement?$(event)[0].target.parentElement.parentElement:'';
+            // console.log($(event));
+            // console.log($(event)[0].target);
+            // console.log($(event)[0].target.parentElement);
+            // console.log($(event)[0].target.parentElement.parentElement);
+            if(evt.id == 'more'||evtParent.id == 'more'){
+                $('#side').css('left','50%');
+                return;
+            }else if(evt.id == 'side'||evtParent.id == 'side'||evtParentParent.id == 'side'){// 如果是元素本身，则返回
+                return
+            }else{
+                $('#side').css('left','100%'); // 如不是则隐藏元素
+            }
+        });
     });
 
 </script>
