@@ -286,7 +286,7 @@ $(document).ready(function(){
 			</p>
 			<p class="t-right">
 				未满18周岁禁止购买<br />
-				Copyright © 点金EA 2010-2019  桃花彩 版权所有
+				Copyright © 点金EA 2010-2019  版权所有
 			</p>
 		</div>
 	</div>
