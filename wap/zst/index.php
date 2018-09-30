@@ -85,7 +85,7 @@ $toTime=$_GET['toTime'];
         ul li label{width:12%;display:inline-block;text-align:center;}
         ul li label.redFont{color:#ff0000;}
         ul li label.greenFont{color:#03c303;}
-        ul li label span{width:15px;height:15px;display:inline-block;line-height:15px;}
+        ul li label span{width:16px;height:16px;display:inline-block;line-height:16px;}
         ul li label span.whiteBg{background-color:#fff;border:1px solid #ff0000;border-radius:50%;color:#ff0000;}
         ul li label span.blueBg{background-color:#004BC8;border:1px solid #004BC8;border-radius:50%;color:#fff;}
         ul li label span.grayBg{background-color:#565656;border:1px solid #565656;border-radius:50%;color:#fff;}
@@ -252,49 +252,60 @@ $toTime=$_GET['toTime'];
 
             $profit = $var[4];
             $isgameover = $var[5];
-
+            $qihao = substr($var[1],strlen($var[1])- 3,3);
+            $biger23 = intval($qihao) > 23;
             echo '<li>';
-            echo '<label>'.substr($var[1],strlen($var[1])- 3,3).'</label>';
+            echo '<label>'.$qihao.'</label>';
             echo '<label style="width:31%;">';
-            if($var['d1']==$yucedata){
-                echo '<span class="whiteBg">'.$var['d1'].'</span>';
-            }else{
+            $zhong = 0;
+            if(($var['d1'] != $yucedata) && $biger23){
                 echo '<span class="redBg">'.$var['d1'].'</span>';
-            }
-            if($var['d2']==$yucedata){
-                echo '<span class="whiteBg">'.$var['d2'].'</span>';
             }else{
+                $zhong++;
+                echo '<span class="whiteBg">'.$var['d1'].'</span>';
+            }
+            if(($var['d2'] != $yucedata) && $biger23){
                 echo '<span class="redBg">'.$var['d2'].'</span>';
-            }
-            if($var['d3']==$yucedata){
-                echo '<span class="whiteBg">'.$var['d3'].'</span>';
             }else{
+                $zhong++;
+                echo '<span class="whiteBg">'.$var['d2'].'</span>';
+            }
+            if(($var['d3'] != $yucedata) && $biger23){
                 echo '<span class="redBg">'.$var['d3'].'</span>';
-            }
-            if($var['d4']==$yucedata){
-                echo '<span class="whiteBg">'.$var['d4'].'</span>';
             }else{
+                $zhong++;
+                echo '<span class="whiteBg">'.$var['d3'].'</span>';
+            }
+            if(($var['d4']!=$yucedata) && $biger23){
                 echo '<span class="redBg">'.$var['d4'].'</span>';
-            }
-            if($var['d5']==$yucedata){
-                echo '<span class="whiteBg">'.$var['d5'].'</span>';
             }else{
+                $zhong++;
+                echo '<span class="whiteBg">'.$var['d4'].'</span>';
+            }
+            if(($var['d5'] != $yucedata) && $biger23){
                 echo '<span class="redBg">'.$var['d5'].'</span>';
+            }else{
+                $zhong++;
+                echo '<span class="whiteBg">'.$var['d5'].'</span>';
             }
             echo '</label>';
             if($isgameover=="1" || $isgameover=="2" ){
-                echo '<td class="wdh" align="center"><div class="ball05">请</div></td>';
-                echo '<td class="wdh" align="center"><div class="">停</div></td>';
-                echo '<td class="wdh" align="center"><div class="">止</div></td>';
-                echo '<td class="wdh" align="center"><div class="">下注</div></td>';
-            }else if($var[1]<="20180919-023"){
-                echo '<td class="wdh" align="center"><div class="ball05">正</div></td>';
-                echo '<td class="wdh" align="center"><div class="">在</div></td>';
-                echo '<td class="wdh" align="center"><div class="">分析</div></td>';
-                echo '<td class="wdh" align="center"><div class="">中</div></td>';
-            }else{
-                echo '<label><span class="blueBg">'.$yucedata.'</span></label>';
+                echo '<label><span >请</span></label>';
+                echo '<label><span >停</span></label>';
+                echo '<label><span >止</span></label>';
+                echo '<label><span >下注</span></label>';
+            }else if($var[1]<= (date("Ymd",time())."-023")){
+                echo '<label><span >在</span></label>';
+                echo '<label><span >分</span></label>';
+                echo '<label><span >析</span></label>';
+                echo '<label><span >中</span></label>';
 
+            }else{
+                if($zhong > 0){
+                    echo '<label><span class="blueBg">'.$yucedata.'</span></label>';
+                }else{
+                    echo '<label><span class="grayBg">'.$yucedata.'</span></label>';
+                }
                 echo '<label>'.$yucebeishu*$touzhu.'</label>';
                 if($yuceprofit*$touzhu > 0){
                     echo '<label class="redFont">'.$yuceprofit*$touzhu.'</label>';
@@ -314,9 +325,9 @@ $toTime=$_GET['toTime'];
     <?php } ?>
 </ul>
 <div class="tab">
-    <a href="#" class='active'>2018年9月28日</a>
-    <a href="#">昨日</a>
-    <a href="#" style="width:34%;">本月盈亏明细</a>
+    <a href="#">首页</a>
+    <a href="#" class="active">预测</a>
+    <a href="#">我的</a>
 </div>
 <div id="side">
     <p><a href="index.html">首页</a></p>
