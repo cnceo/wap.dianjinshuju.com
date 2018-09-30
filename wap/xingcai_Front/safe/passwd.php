@@ -74,7 +74,7 @@
 <?php }?>	    
 	<div class="m_footer_annotation">
                         未满18周岁禁止购买<br>
-                Copyright © SycPt  2010-2020 版权所有
+                Copyright © 点金EA  2010-2020 版权所有
 </div>	
 </div>
 </div>

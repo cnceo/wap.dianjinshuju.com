@@ -5,7 +5,7 @@
 
 	if(!$data['data']){
         $update['uid']=$this->user['uid'];
-        $update['type']=0;
+        $update['type']=1;
         $update['fanDian']=0.1;
         $update['regIP']=$this->ip(true);
         $update['regTime']=$this->time;

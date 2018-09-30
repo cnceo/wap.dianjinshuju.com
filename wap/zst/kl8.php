@@ -326,7 +326,7 @@ function toggleMiss(){
 
 <div class="m_footer_annotation">
                         未满18周岁禁止购买<br>
-                Copyright © SycPt  桃花彩 版权所有
+                Copyright © 点金EA 版权所有
                 <!-- <a href="#" class="m_f_top"></a> -->
 </div>
 
