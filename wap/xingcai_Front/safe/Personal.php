@@ -2,12 +2,12 @@
 <section class="wraper-page">
 <div class="m_user_index">
 	<div class="m_user_index_top_box">
-		<div class="m_user_name">
-			<div class="m_u_name">欢迎您 , <?=$this->user['username']?>
+		<!--<div class="m_user_name">
+			<div class="m_u_name">欢迎您 , <?/*=$this->user['username']*/?>
             <a href="#" class="ui_msgnum" style="display:none">0</a></div>
 			<div class="m_u_info">签到： <a datatype="json" call="indexSign" target="ajax" href="/index.php/display/sign" class="m_u_info_btn"></a></div>
-		</div>
-			<div class="m_y_moery">
+		</div>-->
+			<!--<div class="m_y_moery">
 				<div class="v-moeny">
 					<div class="you-money">
 		                <span class="t_money rounded" title="0.0000">
@@ -23,14 +23,14 @@
 		                </span> 		                
 					</div>
 				</div>
-			</div>
-			<div class="m_u_nav_list">
+			</div>-->
+			<!--<div class="m_u_nav_list">
 					<ul>
 						<li><a class="m_user_chongzhi" href="/index.php/cash/recharge">
 								充值
 						</a></li>
 						<li><a class="m_user_tixian" href="/index.php/cash/toCash">
-							
+
 							提现
 						</a></li>
 						<li><a class="m_user_jilu" href="/index.php/cash/rechargeLog">
@@ -40,12 +40,12 @@
 							提现记录
 						</a></li>
 					</ul>
-				</div>
+				</div>-->
 	</div></div>
 	<div class="m_reports_muelist">
 			<dl>
 			<dt class="m_user_reports_title">
-				<span class="m_re_name m_account">账户管理</span>
+				<span class="m_re_name m_account">用户中心</span>
 			</dt>
 			<dd>
 				<ul class="m_user_reports_list">
@@ -62,10 +62,6 @@
 						<div class="m_user_reports_child"></div>
 					</li>	-->
 					<li>
-						<a class="reports_list_title" href="/index.php/safe/info">绑定卡号</a>
-						<div class="m_user_reports_child"></div>
-					</li>
-					<li>
 						<a class="reports_list_title" href="/index.php/safe/loginpasswd">登入密码</a>
 						<div class="m_user_reports_child"></div>
 					</li>
@@ -73,10 +69,18 @@
 						<a class="reports_list_title" href="/index.php/safe/passwd">提款密码</a>
 						<div class="m_user_reports_child"></div>
 					</li>
-					<li>
+                    <li>
+                        <a class="reports_list_title" href="/index.php/safe/info">绑定卡号</a>
+                        <div class="m_user_reports_child"></div>
+                    </li>
+                    <li>
+                        <a class="reports_list_title" href="/index.php/cash/recharge">充值提现</a>
+                        <div class="m_user_reports_child"></div>
+                    </li>
+					<!--<li>
 						<a class="reports_list_title" href="/index.php/box/receive">消息管理</a>
 						<div class="m_user_reports_child"></div>
-					</li>
+					</li>-->
 					
 				<li class="cler_both"></li>
 				<!-- <div class="cler_both"></div> -->
@@ -91,20 +95,20 @@
 			<dd>
 				<ul class="m_user_reports_list">
 					<li>
-						<a class="reports_list_title re_cur" href="javascript:;">推广链接</a>
-						<div class="m_user_reports_child">
+						<a class="reports_list_title" href="/index.php/team/linkList">推广链接</a>
+						<!--<div class="m_user_reports_child">
 							<a class="reports_list_list" href="/index.php/team/linkList">链接管理</a>
 							<a class="reports_list_list" href="/index.php/team/addlink">推广设定</a>
-						</div>
+						</div>-->
 					</li>
 					<li>
 						<a class="reports_list_title" href="/index.php/team/memberList">用户列表</a>
 						<div class="m_user_reports_child"></div>
 					</li>
-					<!--<li>
-						<a class="reports_list_title" href="/index.php/team/addMember">注册管理</a>
+					<li>
+						<a class="reports_list_title" href="/index.php/team/addMember">手动注册</a>
 						<div class="m_user_reports_child"></div>
-					</li>-->
+					</li>
 <!--					<li>-->
 <!--						<a class="reports_list_title" href="/index.php/team/gameRecord">团队记录</a>-->
 <!--						<div class="m_user_reports_child"></div>-->

@@ -24,29 +24,29 @@ $teamAll=$this->getRow("select sum(u.coin) coin, count(u.uid) count from {$this-
 								<th>我的账号</th>
 								<td><?=$this->user['username']?></td>
 							</tr>
-							<tr>
+							<!--<tr>
 								<th>账号类型</th>
-								<td><?=$this->iff($this->user['type'], '代理', '会员')?></td>
-							</tr>
+								<td><?/*=$this->iff($this->user['type'], '代理', '会员')*/?></td>
+							</tr>-->
 							<tr>
 								<th>用户昵称</th>
 								<td><?=$this->user['nickname']?></td>
 							</tr>
-							<tr>
+							<!--<tr>
 								<th>可用余额</th>
-								<td><?=$this->user['coin']?> 元</td>
-							</tr>
-							<tr>
+								<td><?/*=$this->user['coin']*/?> 元</td>
+							</tr>-->
+							<!--<tr>
 								<th>团队余额</th>
-								<td><?=$teamAll['coin']?> 元</td>
-							</tr>
+								<td><?/*=$teamAll['coin']*/?> 元</td>
+							</tr>-->
 							<tr>
 								<th>直属下级</th>
 								<td><?=$teamAll2['count']?> 位</td>
 							</tr>
 							<tr>
 								<th>所有下级</th>
-								<td><?=($teamAll['count']-1)?> 位</td>
+								<td><?=($teamAll['count'])?> 位</td>
 							</tr>
 									<?php 
 										$onlineNum = 0;
