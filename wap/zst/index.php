@@ -91,7 +91,7 @@ $toTime=$_GET['toTime'];
         ul li label span.grayBg{background-color:#565656;border:1px solid #565656;border-radius:50%;color:#fff;}
         .tab{position:fixed;bottom:0;width:100%;height:50px;line-height:50px;background-color:#fff;z-index:2;}
         .tab a{width:33%;display:inline-block;float:left;text-align:center;color:#0048C8;font-size:16px;}
-        .tab a.active{color:#fff;background-color:#0048C8;}
+        .tab a.on{color:#fff;background-color:#0048C8;}
         #side{width:50%;height:100%;background:rgba(0,0,0,0.8);position:fixed;left:100%;top:0;z-index:3;transition:.3s;}
         #side p{color:#aecfff;padding:0 10px 0 25px;line-height:50px;border-bottom:1px solid #53cece;}
         #side p a{color:#aecfff;}
