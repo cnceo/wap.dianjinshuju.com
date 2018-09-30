@@ -362,7 +362,33 @@ $toTime=$_GET['toTime'];
     <a class="signOut" href="login.html">退出登录</a>
 </div>
 <script type="text/javascript">
+    $(function() {
+        $('.tab a').click(function(){
+            $(this).addClass('active').siblings('a').removeClass('active');
+        })
+        $('body').bind('click', function(event) {//侧边菜单栏
+            // IE支持 event.srcElement ， FF支持 event.target
+            // var evt = event.srcElement ? event.srcElement : event.target;
+            // var evtParent = event.srcElement ? event.srcElement : event.target;
+            var evt = $(event)[0].target;
+            var evtParent = $(event)[0].target.parentElement;
+            var evtParentParent = $(event)[0].target.parentElement.parentElement?$(event)[0].target.parentElement.parentElement:'';
+            // console.log($(event));
+            // console.log($(event)[0].target);
+            // console.log($(event)[0].target.parentElement);
+            // console.log($(event)[0].target.parentElement.parentElement);
+            if(evt.id == 'more'||evtParent.id == 'more'){
+                $('#side').css('left','50%');
+                return;
+            }else if(evt.id == 'side'||evtParent.id == 'side'||evtParentParent.id == 'side'){// 如果是元素本身，则返回
+                return
+            }else{
+                $('#side').css('left','100%'); // 如不是则隐藏元素
+            }
+        });
+    });
     $(function(){
+
         var riable=0;
         $(".nfdprize_text").click(function(){
             if(riable==0){
