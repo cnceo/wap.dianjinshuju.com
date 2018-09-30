@@ -326,7 +326,7 @@ $toTime=$_GET['toTime'];
 </ul>
 <div class="tab">
     <a href="#">首页</a>
-    <a href="#" class="active">预测</a>
+    <a href="#" class="on">预测</a>
     <a href="#">我的</a>
 </div>
 <div id="side">
