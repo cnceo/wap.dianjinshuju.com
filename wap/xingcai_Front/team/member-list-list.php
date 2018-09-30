@@ -1,53 +1,78 @@
  <?php
-	$sql="select * from {$this->prename}links where enable=1 and uid={$this->user['uid']}";
+	$sql="select * from {$this->prename}links where enable=1 and uid={$this->user['uid']} limit 1";
 	if($_GET['uid']=$this->user['uid']) unset($_GET['uid']);
 	$data=$this->getPage($sql, $this->page, $this->pageSize);
+
+	if(!$data['data']){
+        $update['uid']=$this->user['uid'];
+        $update['type']=0;
+        $update['fanDian']=0.1;
+        $update['regIP']=$this->ip(true);
+        $update['regTime']=$this->time;
+
+        if($update['fanDian']<0) throw new Exception('返点不能小于0');
+        if($update['fanDian']>$this->iff($this->user['fanDian']-$this->settings['fanDianDiff']<0,0,$this->user['fanDian']-$this->settings['fanDianDiff'])) throw new Exception('返点不能大于'.$this->iff($this->user['fanDian']-$this->settings['fanDianDiff']<0,0,$this->user['fanDian']-$this->settings['fanDianDiff']));
+        if($update['type']!=0 && $update['type']!=1) throw new Exception('类型出错，请重新操作');
+        if($update['uid']!=$this->user['uid']) throw new Exception('只能增加自己的推广链接!');
+
+        // 查检返点设置
+        if($update['fanDian']){
+            $this->getSystemSettings();
+            if($update['fanDian'] % $this->settings['fanDianDiff']) throw new Exception(sprintf('返点只能是%.1f%的倍数', $this->settings['fanDianDiff']));
+        }else{
+            $update['fanDian']=0.0;
+        }
+        $this->beginTransaction();
+        try{
+            $sql="select fanDian from {$this->prename}links where uid={$update['uid']} and fanDian=? ";
+            if($this->getValue($sql, $update['fanDian'])) throw new Exception('此链接已经存在');
+            if($this->insertRow($this->prename .'links', $update)){
+                $id=$this->lastInsertId();
+                $this->commit();
+                return '添加链接成功';
+            }else{
+                throw new Exception('添加链接失败');
+            }
+
+        }catch(Exception $e){
+            $this->rollBack();
+            $erromsg = $e->getMessage();
+            echo "<script>alert(\"$erromsg\");</script>";
+        }
+        $data=$this->getPage($sql, $this->page, $this->pageSize);
+    }
+
 	?>
 
-<div>
-<div class="row">
-                 <div class="col-sm-12">
-                <div class="ibox float-e-margins">
-                    <div class="tab-first clearfix">
-<ul class="list_menus-li">
-	<li><a href="/index.php/team/addlink">推广设定</a></li>
-	<li class="on"><a href="/index.php/team/linkList">链接管理</a></li>
-</ul>
-</div>
-                    <div class="ibox-content">
+ <div>
+     <div class="row">
+         <div class="col-sm-12">
+             <div class="ibox float-e-margins">
+                 <div class="tab-first clearfix">
+                 </div>
+                 <div class="ibox-content">
+                     <?php
+                     $sql="select * from {$this->prename}links where lid=?";
+                     if(!$linkData=$this->getRow($sql, $data['data'][0]['lid'])){
+                         ?>
+                            该注册链接不存在，或者已经失效！
+                         <?php
+                     }else{
+                         $pd = "select * from {$this->prename}members where uid=?";
+                         $parentData = $this->getRow($pd, $linkData['uid']);
+                         ?>
 
-                        <table width="100%" border="0" cellspacing="1" cellpadding="0" class="table table-striped table-bordered table-hover dataTables-example">
-                            <thead>
-                                <tr>
-									<th>编号</th>
-                                    <th>类型</th>
-                                    <th>返点</th>
-                                    <th>操作</th>
-                                </tr>
-                            </thead>
-                            <tbody class="table_b_tr">
-						<?php if($data['data']) foreach($data['data'] as $var){ ?>
-                                <tr class="gradeX">
-								 <td><?=$var['lid']?></td>
-                                    <td><?php if($var['type']){echo'代理';}else{echo '会员';}?></td>
-									<td><?=$var['fanDian']?>%</td>
-                                    <td><a href="/index.php/team/linkUpdate/<?=$var['lid']?>" style="color:#333;" target="modal"  width="95%" title="修改注册链接" modal="true" button="确定:dataAddCode|取消:defaultCloseModal">修改</a> 
-									
-									| <a href="/index.php/team/getLinkCode/<?=$var['lid']?>" style="color:#333;" target="modal" width="95%"  title="获取链接" modal="true" button="取消:defaultCloseModal">获取链接</a> 
-									
-									| <a  href="/index.php/team/linkDelete/<?=$var['lid']?>" button="确定删除:dataAddCode" modal="true" title="删除注册链接" width="95%" target="modal"  style="color:#333;">删除</a></td>
+                         我的推广链接：http://<?=$_SERVER['HTTP_HOST']?>/index.php/user/r/<?=$this->strToHex($this->myxor($linkData['lid']));?>
+                         <input type="hidden" id="biao1" readonly="readonly" value="http://<?=$_SERVER['HTTP_HOST']?>/index.php/user/r/<?=$this->strToHex($this->myxor($linkData['lid']));?>" />
+                         <input type="button" onClick="copyUrl1()" value="复制" />
+<br/>
 
-								</tr>
-    <?php } ?>
-                                
-                            </tbody>
-                        
-                        </table>
-</div>
-</div>
-</div>
-</div>
-</div>
+                     <?php }?>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
 
 
    <script>
