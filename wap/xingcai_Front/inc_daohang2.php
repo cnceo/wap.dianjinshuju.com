@@ -21,6 +21,19 @@
 
 <script type="text/javascript" src="/js/nsc/main.js?v=1.17.1.23"></script>
 </head>
+
+<style>
+    #side{width:50%;height:100%;background:rgba(0,0,0,0.8);position:fixed;left:100%;top:0;z-index:3;transition:.3s;}
+    #side p{color:#aecfff;padding:0 10px 0 25px;line-height:50px;border-bottom:1px solid #53cece;}
+    #side p a{color:#aecfff;}
+    #side .halfWidthLink{padding:10px 10px 10px 25px;border-bottom:1px solid #53cece;}
+    #side .halfWidthLink a{color:#fff;font-size:12px;width:48%;white-space:nowrap;display:inline-block;}
+    #side .halfWidthLink a:nth-child(2n){text-align:right;}
+    #side .allWidthLink{padding:10px 10px 10px 25px;border-bottom:1px solid #53cece;}
+    #side .allWidthLink a{color:#fff;font-size:12px;width:100%;white-space:nowrap;display:inline-block;}
+    #side .signOut{color:#fff;font-size:12px;position:absolute;right:5px;bottom:10px;}
+</style>
+
 <body>
 <div id="body">
 <header class="header">
@@ -29,124 +42,82 @@
 
 
 	<!-- <a class="m-return" href="javascript:checkbackspace();">返回</a> -->
-	<span class="btn-slide-bar"></span>
+	<span class="btn-slide-bar" id="more"></span>
 </header>
 
-<!--侧导航 -->
-    <section class="slide-bar" style="display: none;">
-        <ul class="tree">
-            <li class="tree_list"><h3 class="one_nav_list home"><a href="/?index.php">首页</a></h3>
-                <div class="m_nav_line"></div>
-            </li>
-            <!--<li class="tree_list">
-                <h3 class="one_nav_list uc_icon_r"><a href="/index.php/safe/Personal">用户中心</a></h3>
-                <div class="m_nav_line"></div>
-            </li>-->
-
-            <li class="tree_box tree_list">
-                <h3 class="one_nav_list account_icon">用户中心<i class="lnstruction-top"></i></h3>
-                <ul class="tree_one" style="display:block">
-                    <li class="lotter_list_game">
-                        <div class="m_nav_line"></div>
-                        <dl class="lnstruction">
-                            <dd>
-                                <ul class="lot_list">
-                                    <li class="tree_list"><a href="/index.php/safe/loginpasswd">登入密码</a></li>
-                                    <li class="tree_list"><a href="/index.php/safe/passwd">提款密码</a></li>
-                                    <li class="tree_list"><a href="/index.php/safe/info">绑定卡号 </a></li>
-                                    <li class="tree_list"> <a href="/index.php/cash/recharge">充值提现</a></li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </li>
-                </ul>
-                <div class="m_nav_line"></div>
-            </li>
-            <?php if($this->user['type']){?>
-                <li class="tree_box tree_list">
-                    <h3 class="one_nav_list team_icon">团队管理<i class="lnstruction-top"></i></h3>
-                    <ul class="tree_one" style="display:block">
-                        <li class="lotter_list_game">
-                            <div class="m_nav_line"></div>
-                            <dl class="lnstruction">
-                                <dd>
-                                    <ul class="lot_list">
-                                        <li class="tree_list"><a href="/index.php/team/linkList">推广链接</a></li>
-                                        <li class="tree_list"><a href="/index.php/team/memberList">用户列表</a></li>
-                                        <li class="tree_list"><a href="/index.php/team/addMember">手动注册</a></li>
-                                        <li class="tree_list"><a href="/index.php/team/coinall">团队统计</a></li>
-                                    </ul>
-                                </dd>
-                            </dl>
-                        </li>
-                    </ul>
-                    <div class="m_nav_line"></div>
-                </li>
-
-                <li class="tree_box tree_list">
-                    <h3 class="one_nav_list  game_icon tree_box">点金产品<i class="lnstruction-top"></i></h3>
-                    <ul class="tree_one" style="display:block">
-                        <li class="lotter_list_game">
-                            <div class="m_nav_line"></div>
-                            <dl>
-                                <!--<dt>点金产品</dt>-->
-                                <dd>
-                                    <ul class="lot_list">
-                                        <li><a href="/zst/?typeid=1" style="font-size: 1px;">>重庆时时彩五星定位预测</a> </li>
-                                    </ul>
-                                </dd>
-                            </dl>
-                        </li>
-                    </ul>
-                    <div class="m_nav_line"></div>
-                </li>
-
-
-            <?}?>
-            <!--<li class="tree_box tree_list">
-                <h3 class="one_nav_list account_icon">充值提现<i class="lnstruction-top"></i></h3>
-                <ul class="tree_one">
-                    <li class="lotter_list_game">
-                        <div class="m_nav_line"></div>
-                            <dl class="lnstruction">
-                                <dd>
-                                    <ul class="lot_list">
-                                        <li class="tree_list"> <a href="/index.php/cash/recharge">充值</a></li>
-                                        <li class="tree_list"> <a href="/index.php/cash/toCash">提现</a></li>
-                                        <li class="tree_list"> <a href="/index.php/cash/rechargeLog">充值记录</a></li>
-                                        <li class="tree_list"><a href="/index.php/cash/toCashLog">提现记录 </a></li>
-                                    </ul>
-                                </dd>
-                            </dl>
-                    </li>
-                </ul>
-                <div class="m_nav_line"></div>
-            </li>-->
-            <!--<li class="tree_box tree_list">
-                <h3 class="one_nav_list activity_icon">优惠活动<i class="lnstruction-top"></i></h3>
-                <ul class="tree_one">
-                    <li class="lotter_list_game">
-                        <div class="m_nav_line"></div>
-                            <dl class="lnstruction">
-                                <dd>
-                                    <ul class="lot_list">
-                                        <li class="tree_list"><a href="/index.php/score/lucky">幸运抽奖</a></li>
-                                        <li class="tree_list"><a href="/index.php/cash/card">卡密充值</a></li>
-                                        <li class="tree_list"><a href="/index.php/lottery/hemai">合买中心</a></li>
-                                        <li class="tree_list"><a class="notice" href="/index.php/notice/info">系统公告</a></li>
-                                    </ul>
-                                </dd>
-                            </dl>
-                    </li>
-                </ul>
-                <div class="m_nav_line"></div>
-            </li>-->
-        </ul>
-    </section>
-    <div class="home_b">
-        <div class="m_nav_line"></div>
-        <!-- <a href="">首页</a> -->
-        <!--<a class="one_nav_list conpt_icon" href="/?v=2">电脑版</a>-->
-        <a class="one_nav_list retreat_icon" href="javascript:m_loginout()">安全退出</a>
+    <!--侧导航 -->
+    <div id="side">
+        <p><a href="index.html">首页</a></p>
+        <p>用户中心</p>
+        <div class="halfWidthLink">
+            <a href="/index.php/safe/loginpasswd">> 登录密码</a>
+            <a href="/index.php/safe/passwd">> 提款密码</a>
+            <a href="/index.php/safe/info">> 绑定卡号</a>
+            <a href="/index.php/cash/recharge">> 充值提现</a>
+        </div>
+        <p>团队管理</p>
+        <div class="halfWidthLink">
+            <a href="/index.php/team/linkList">> 推广链接</a>
+            <a href="/index.php/team/memberList">> 用户列表</a>
+            <a href="/index.php/team/addMember">> 手动注册</a>
+            <a href="/index.php/team/coinall">> 团队统计</a>
+        </div>
+        <p>点金产品</p>
+        <div class="allWidthLink">
+            <a href="/zst/?typeid=1">> 重庆时时彩五星定位预测</a>
+            <a href="#">> 点金EA2000</a>
+            <a href="#">> 点金分分彩刷量模拟</a>
+            <a href="#">> 24小时回补极限算法</a>
+        </div>
+        <div class="allWidthLink" style="border:none;">
+            <a href="#">微信客服：dianjinshuju99</a>
+            <a href="#">QQ客服：302288999</a>
+            <a href="#">点金①群：302288999</a>
+            <a href="#">点金②群：302288999</a>
+            <a href="#">商务合作：301199</a>
+        </div>
+        <a class="signOut" href="javascript:m_loginout()">退出登录</a>
     </div>
-    <div class="shady"></div>
+
+
+    <script type="text/javascript">
+
+        $(function() {
+            $('.tableHead span').click(function(){//‘用户中心’，‘团队管理’，‘客服服务’之间的切换
+                $(this).addClass('active').siblings('span').removeClass('active');
+                var index = $(this).index();
+                $('.content1').eq(index).show().siblings('.content1').hide();
+            });
+            $('.userCenter .tab span').click(function(){//‘用户中心’页面下菜单之间的切换
+                $(this).addClass('active').siblings('span').removeClass('active');
+                var index = $(this).index();
+                $('.content2').eq(index).show().siblings('.content2').hide();
+            });
+            $('.teamManage .tab span').click(function(){//‘团队管理’页面下菜单之间的切换
+                $(this).addClass('active').siblings('span').removeClass('active');
+                var index = $(this).index();
+                $('.content3').eq(index).show().siblings('.content3').hide();
+            });
+            $('body').bind('click', function(event) {//侧边菜单栏
+                // IE支持 event.srcElement ， FF支持 event.target
+                // var evt = event.srcElement ? event.srcElement : event.target;
+                // var evtParent = event.srcElement ? event.srcElement : event.target;
+                var evt = $(event)[0].target;
+                var evtParent = $(event)[0].target.parentElement;
+                var evtParentParent = $(event)[0].target.parentElement.parentElement?$(event)[0].target.parentElement.parentElement:'';
+                // console.log($(event));
+                // console.log($(event)[0].target);
+                // console.log($(event)[0].target.parentElement);
+                // console.log($(event)[0].target.parentElement.parentElement);
+                if(evt.id == 'more'||evtParent.id == 'more'){
+                    $('#side').css('left','50%');
+                    return;
+                }else if(evt.id == 'side'||evtParent.id == 'side'||evtParentParent.id == 'side'){// 如果是元素本身，则返回
+                    return
+                }else{
+                    $('#side').css('left','100%'); // 如不是则隐藏元素
+                }
+            });
+        });
+
+    </script>

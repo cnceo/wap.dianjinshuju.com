@@ -33,39 +33,40 @@
 })(window);
 
 document.addEventListener("DOMContentLoaded", function(){
-    (function(){
-        var _btn  = document.querySelector(".btn-slide-bar"),
-            _body = document.querySelector("#body");
-        _tbody = document.querySelector(".shady")
-        var b = 1;
-        _btn.onclick = function(){
-            b = 2;
-            var docH = $(window).height();
-            var navH = $(".header").height();
-            var centH = docH;
-            $(".wraper-page").height(centH);
-            $(".wraper-page").css('overflow','hidden');
-            $(".home_b").css('display','block');
-            $(".slide-bar").css('display','block');
-            _body.classList.toggle("active");
-            $(".shady").fadeIn();
-
-            $("body").css('overflow-x','hidden');
-        }
-        _tbody.onclick = function(){
-            if(b==2){
-                b=1;
-                $(".wraper-page").css({'overflow':'visible','height':''});
-                _body.classList.toggle("active");
-
-                $(".shady").fadeOut(300,function(){
-                    $(".slide-bar").css('display','none');
-                    $(".home_b").css('display','none');
-                    $("body").css('overflow-x','visible')
-                });
-            }
-        }
-    })(window)
+    // (function(){
+    //     // var _btn  = document.querySelector(".btn-slide-bar"),
+    //     var _btn  = document.querySelector(".btn-slide-barddddddddddd"),
+    //         _body = document.querySelector("#body");
+    //     _tbody = document.querySelector(".shady")
+    //     var b = 1;
+    //     _btn.onclick = function(){
+    //         b = 2;
+    //         var docH = $(window).height();
+    //         var navH = $(".header").height();
+    //         var centH = docH;
+    //         $(".wraper-page").height(centH);
+    //         $(".wraper-page").css('overflow','hidden');
+    //         $(".home_b").css('display','block');
+    //         $(".slide-bar").css('display','block');
+    //         _body.classList.toggle("active");
+    //         $(".shady").fadeIn();
+    //
+    //         $("body").css('overflow-x','hidden');
+    //     }
+    //     _tbody.onclick = function(){
+    //         if(b==2){
+    //             b=1;
+    //             $(".wraper-page").css({'overflow':'visible','height':''});
+    //             _body.classList.toggle("active");
+    //
+    //             $(".shady").fadeOut(300,function(){
+    //                 $(".slide-bar").css('display','none');
+    //                 $(".home_b").css('display','none');
+    //                 $("body").css('overflow-x','visible')
+    //             });
+    //         }
+    //     }
+    // })(window)
 },false);
 
 //添加投注跳到下面
