@@ -325,9 +325,9 @@ $toTime=$_GET['toTime'];
     <?php } ?>
 </ul>
 <div class="tab">
-    <a href="#">首页</a>
+    <a href="http://wap.dianjinshuju.com/">首页</a>
     <a href="#" class="on">预测</a>
-    <a href="#">我的</a>
+    <a href="/index.php/safe/Personal">我的</a>
 </div>
 <div id="side">
     <p><a href="index.html">首页</a></p>
