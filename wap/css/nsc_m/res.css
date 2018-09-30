@@ -61,7 +61,7 @@ height:2.9rem;line-height:2.9rem;z-index:1;}
 /*提示*/
 .m-return , .m-return-home{color:#ffffff;font-size:0.8rem;width:5rem;display:inline-block;text-align:center;height:2.9rem;line-height:2.9rem;background-image:url(/images/nsc_m/m_home.png);background-repeat:no-repeat;background-position:-0.1rem center;background-size:114%;padding-left:0.4rem;margin-left:.4rem;}
 .header{
-    background: url(/images/nsc_m/index/top_bg.png) no-repeat;
+    background-color:#004BC8;
     background-size: 100% 3rem;
     height: 3rem;
     position: fixed;

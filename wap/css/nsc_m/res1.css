@@ -61,7 +61,7 @@ height:2.9rem;line-height:2.9rem;z-index:1;}
 
 /*提示*/
 .m-return , .m-return-home{color:#ffffff;font-size:0.8rem;width:5rem;display:inline-block;text-align:center;height:2.9rem;line-height:2.9rem;background-image:url(/images/nsc_m/m_home.png);background-repeat:no-repeat;background-position:-0.1rem center;background-size:114%;padding-left:0.4rem;margin-left:.4rem;}
-.header{background:url(/images/nsc_m/index/top_bg.png) no-repeat;background-size:100% 2.933333rem;position:fixed;width:100%;top:0;z-index:100;left:0}
+.header{background-color:#004BC8;background-size:100% 2.933333rem;position:fixed;width:100%;top:0;z-index:100;left:0}
 .footer{border-top:0.066667rem solid #e73068;bottom:0;}
 .header .btn-slide-bar{  position: relative;
 z-index:104;width:2.933333rem;text-align:center;height:2.933333rem;float:right;cursor:pointer;line-height:0.186667rem;}
