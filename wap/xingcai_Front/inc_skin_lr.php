@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" style="font-size: 16.3125px;" class="gwd_undefined"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
-<title>桃花彩 </title>
+<title>点金EA </title>
 <meta name="keywords" content="">
 <meta nam="description" content="">
 <link rel="stylesheet" href="/css/nsc_m/res1.css?v=1.16.11.16">

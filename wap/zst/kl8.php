@@ -45,7 +45,7 @@ $fromTime=$_GET['fromTime'];
 $toTime=$_GET['toTime'];
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:esun="" style="font-size: 15.525px;"><head>
-<title>桃花彩-官方网站</title>
+<title>点金EA-官方网站</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
 <meta http-equiv="Pragma" content="no-cache">
@@ -326,7 +326,7 @@ function toggleMiss(){
 
 <div class="m_footer_annotation">
                         未满18周岁禁止购买<br>
-                Copyright © SycPt  桃花彩 版权所有
+                Copyright © 点金EA 版权所有
                 <!-- <a href="#" class="m_f_top"></a> -->
 </div>
 
