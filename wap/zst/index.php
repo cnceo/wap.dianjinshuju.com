@@ -124,7 +124,7 @@ $toTime=$_GET['toTime'];
 
 <body>
 <div class="head">
-    <a href=""javascript:history.go(-1)"><返回</a>
+    <a href="/index.php"><返回</a>
     <label>重庆时时彩五星定位</label>
     <div id="more">
         <span></span><span></span><span></span>
