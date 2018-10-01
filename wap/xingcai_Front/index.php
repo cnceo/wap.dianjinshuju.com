@@ -53,7 +53,7 @@
 <body>
 <div class="head">
     <img src="/images/nsc_m/headLogo.png">
-    <label>欢迎您！niuoo100</label>
+    <label>欢迎您！<?=$this->user['username']?></label>
     <div class="more" id="more">
         <span></span><span></span><span></span>
     </div>
