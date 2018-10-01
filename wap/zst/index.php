@@ -124,7 +124,7 @@ $toTime=$_GET['toTime'];
 
 <body>
 <div class="head">
-    <a href="http://www.dianjinshuju.com"><返回</a>
+    <a href="http://wap.dianjinshuju.com"><返回</a>
     <label>重庆时时彩五星定位</label>
     <div id="more">
         <span></span><span></span><span></span>
