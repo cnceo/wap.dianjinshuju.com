@@ -43,9 +43,9 @@
                             <thead>
                                 <tr>
                                     <th>用户名</th>
-                                    <th>类型</th>
-									<th>余额</th>
-                                    <th>返点</th>
+<!--                                    <th>类型</th>-->
+<!--									<th>余额</th>-->
+<!--                                    <th>返点</th>-->
                                     <th>操作</th>
                                 </tr>
                             </thead>
@@ -54,9 +54,9 @@
 	 <?php $login=$this->getRow("select * from {$this->prename}member_session where uid=? order by id desc limit 1", $var['uid']);?>
                                 <tr class="gradeX">
                                     <td><?=$var['username']?></td>
-                                    <td><?=$this->iff($var['type'],'代理','会员')?></td>
-									<td><?=$var['coin']?></td>
-                                    <td><?=$var['fanDian']?>%</td>
+                                    <!--<td><?/*=$this->iff($var['type'],'代理','会员')*/?></td>
+									<td><?/*=$var['coin']*/?></td>
+                                    <td><?/*=$var['fanDian']*/?>%</td>-->
                                  
 									  <?php if($this->user['uid']!=$var['uid'] && $var['parentId']==$this->user['uid']){ ?>
 			<td>
