@@ -173,6 +173,7 @@ $toTime=$_GET['toTime'];
     $totalNumber = $mydb->row_count($tableStr,$whereStr);
 
     $allprofit = 0;
+    $allgameover = 0;
 
     if ($totalNumber>0) {
 
@@ -197,7 +198,7 @@ $toTime=$_GET['toTime'];
 
 2:<?= $allprofit*$touzhu?>
 3:<?= $allgameover?>
-<?php if($allgameover) {?>
+<?php if($allgameover!=0) {?>
 <div class="summary">
     <?php if($allgameover=="1") {?>
         <p>本日已止盈，止盈金额<?= $allprofit*$touzhu?>，为方便计算，赔率按照2倍，如需更精准计划，请<a href="#">点击联系客服!</a></p>
