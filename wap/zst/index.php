@@ -168,7 +168,8 @@ $toTime=$_GET['toTime'];
         $whereStr.=' and time<'.$toTime;
         $whereStr2.=' and a.time<'.$toTime;
     }else{}
-    $orderStr="and a.round is null order by a.number desc";
+    $orderStr1="and a.round is null order by a.number desc";
+    $orderStr2="order by a.number desc";
 
     $totalNumber = $mydb->row_count($tableStr,$whereStr);
 
@@ -184,8 +185,8 @@ $toTime=$_GET['toTime'];
 
         $totalPage = ceil($totalNumber / $perNumber); //计算出总页数
         $startCount = ($page - 1) * $perNumber; //分页开始,根据此方法计算出开始的记录
-        $data = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderStr . " limit $startCount,$perNumber");
-        if($data) foreach($data as $index=>$var){
+        $data1 = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderSt2 . " limit $startCount,$perNumber");
+        if($data1) foreach($data1 as $index=>$var){
             if($var[5]=="1" || $var[5]=="2" ){
                 $allprofit = $var[4];
                 $allgameover = $var[5];
@@ -211,41 +212,44 @@ $toTime=$_GET['toTime'];
 
 
     if ($totalNumber>0){
+        $data1 = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderSt1 . " limit $startCount,$perNumber");
         $oj = json_decode($data[0][3]);
 
+        if($allgameover==0){
+            if($oj->QIANSHAN->currResult==1){
+                $yucedata1 = $oj->QIANSHAN->nextData;
+                $yucebeishu1 = $oj->QIANSHAN->nextBeishu;
+                $yuceprofit1 = $oj->QIANSHAN->nextProfit;
+            }else if($oj->HOUSHAN->currResult==1){
+                $yucedata1 = $oj->HOUSHAN->nextData;
+                $yucebeishu1 = $oj->HOUSHAN->nextBeishu;
+                $yuceprofit1 = $oj->HOUSHAN->nextProfit;
+            }else if($oj->ZHONGHE->currResult==1){
+                $yucedata1 = $oj->ZHONGHE->nextData;
+                $yucebeishu1 = $oj->ZHONGHE->nextBeishu;
+                $yuceprofit1 = $oj->ZHONGHE->nextProfit;
+            }else{
+                $yucedata1 = "等";
+                $yucebeishu1 = "";
+                $yuceprofit1 = "";
+            }
 
-        if($oj->QIANSHAN->currResult==1){
-            $yucedata1 = $oj->QIANSHAN->nextData;
-            $yucebeishu1 = $oj->QIANSHAN->nextBeishu;
-            $yuceprofit1 = $oj->QIANSHAN->nextProfit;
-        }else if($oj->HOUSHAN->currResult==1){
-            $yucedata1 = $oj->HOUSHAN->nextData;
-            $yucebeishu1 = $oj->HOUSHAN->nextBeishu;
-            $yuceprofit1 = $oj->HOUSHAN->nextProfit;
-        }else if($oj->ZHONGHE->currResult==1){
-            $yucedata1 = $oj->ZHONGHE->nextData;
-            $yucebeishu1 = $oj->ZHONGHE->nextBeishu;
-            $yuceprofit1 = $oj->ZHONGHE->nextProfit;
-        }else{
-            $yucedata1 = "等";
-            $yucebeishu1 = "";
-            $yuceprofit1 = "";
+            echo '<li>';
+            echo '<label>下一期</label>';
+            echo '<label style="width:31%;">';
+            echo '<span>等</span>';
+            echo '<span>待</span>';
+            echo '<span>开</span>';
+            echo '<span>奖</span>';
+            echo '<span>中</span>';
+            echo '</label>';
+            echo '<label><span class="blueBg">'.$yucedata1.'</span></label>';
+            echo '<label>'.$yucebeishu1*$touzhu.'</label>';
+            echo '<label class="greenFont">'.$yuceprofit1*$touzhu.'</label>';
+            echo '<label class="redFont"></label>';
+            echo '</li>';
         }
 
-        echo '<li>';
-        echo '<label>下一期</label>';
-        echo '<label style="width:31%;">';
-        echo '<span>等</span>';
-        echo '<span>待</span>';
-        echo '<span>开</span>';
-        echo '<span>奖</span>';
-        echo '<span>中</span>';
-        echo '</label>';
-        echo '<label><span class="blueBg">'.$yucedata1.'</span></label>';
-        echo '<label>'.$yucebeishu1*$touzhu.'</label>';
-        echo '<label class="greenFont">'.$yuceprofit1*$touzhu.'</label>';
-        echo '<label class="redFont"></label>';
-        echo '</li>';
 
         if($data) foreach($data as $index=>$var){
 
@@ -278,6 +282,9 @@ $toTime=$_GET['toTime'];
             $profit = $var[4];
             $isgameover = $var[5];
             $qihao = substr($var[1],strlen($var[1])- 3,3);
+            if(intval($qihao)<24){
+                continue;
+            }
             $biger23 = intval($qihao) > 23;
             echo '<li>';
             echo '<label>'.$qihao.'</label>';
