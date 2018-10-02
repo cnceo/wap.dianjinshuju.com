@@ -52,7 +52,7 @@ $toTime=$_GET['toTime'];
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:esun="" style="font-size: 15.525px;"><head>
     <title>官方网站</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!--<meta http-equiv="refresh" content="5">-->
+    <meta http-equiv="refresh" content="5">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
     <meta http-equiv="Pragma" content="no-cache">
     <link rel="stylesheet" href="/css/nsc_m/list.css?v=1.17.2.1">
@@ -168,7 +168,7 @@ $toTime=$_GET['toTime'];
         $whereStr.=' and time<'.$toTime;
         $whereStr2.=' and a.time<'.$toTime;
     }else{}
-    $orderStr1="and a.round is null order by a.number desc";
+    $orderStr1="and a.round is null order by a.number";
     $orderStr2="order by a.number desc";
 
     $totalNumber = $mydb->row_count($tableStr,$whereStr);
@@ -188,6 +188,7 @@ $toTime=$_GET['toTime'];
         $data1 = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderStr2 . " limit $startCount,$perNumber");
         if($data1) foreach($data1 as $index=>$var){
             if($var[5]=="1" || $var[5]=="2" ){
+                $allqihao = substr($var[1],strlen($var[1])- 3,3);
                 $allprofit = $var[4];
                 $allgameover = $var[5];
                 break;
@@ -281,6 +282,9 @@ $toTime=$_GET['toTime'];
             $isgameover = $var[5];
             $qihao = substr($var[1],strlen($var[1])- 3,3);
             if(intval($qihao)<24){
+                continue;
+            }
+            if($allgameover!=0 && intval($allqihao)>intval($qihao) ){
                 continue;
             }
             $biger23 = intval($qihao) > 23;
