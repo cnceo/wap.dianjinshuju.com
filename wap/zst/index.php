@@ -168,7 +168,7 @@ $toTime=$_GET['toTime'];
         $whereStr.=' and time<'.$toTime;
         $whereStr2.=' and a.time<'.$toTime;
     }else{}
-    $orderStr1="and a.round is null order by a.number";
+    $orderStr1="and a.round is null order by a.number desc";
     $orderStr2="order by a.number desc";
 
     $totalNumber = $mydb->row_count($tableStr,$whereStr);
