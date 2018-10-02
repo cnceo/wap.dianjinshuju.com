@@ -139,11 +139,10 @@ $toTime=$_GET['toTime'];
     <span>当日盈亏</span>
 </div>
 <div style="height:100px;"></div>
-<div class="summary">
-    <p>本日已止盈，止盈金额100，为方便计算，赔率按照2倍，如需更精准计划，请<a href="#">点击联系客服!</a></p>
-</div>
-<ul>
-    <?php
+
+
+
+<?php
     if(!$fromTime) $fromTime=strtotime($dateTime);
     if($toTime) $toTime=strtotime($toTime)+24*3600;
 
@@ -173,19 +172,44 @@ $toTime=$_GET['toTime'];
 
     $totalNumber = $mydb->row_count($tableStr,$whereStr);
 
+    $allprofit = 0;
+
+    if ($totalNumber>0) {
+
+        $countcount = 0;
+        $perNumber = $pgs; //每页显示的记录数
+        $page = $pg; //获得当前的页面值
+        if (!isset($page)) $page = 1;
+
+        $totalPage = ceil($totalNumber / $perNumber); //计算出总页数
+        $startCount = ($page - 1) * $perNumber; //分页开始,根据此方法计算出开始的记录
+        $data = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderStr . " limit $startCount,$perNumber");
+        if($data) foreach($data as $index=>$var){
+            $todayisgameover = $var[5];
+            if($todayisgameover=="1" || $todayisgameover=="2" ){
+                $profit = $var[4];
+                $allprofit = $profit;
+                $allgameover = $todayisgameover;
+                break;
+            }
+        }
+    }
+?>
+
+<?php if($allgameover) {?>
+<div class="summary">
+    <?php if($allgameover=="1") {?>
+        <p>本日已止盈，止盈金额<?= $profit*$touzhu?>，为方便计算，赔率按照2倍，如需更精准计划，请<a href="#">点击联系客服!</a></p>
+    <?php }else {?>
+        <p>本日已止亏，止亏金额<?= $profit*$touzhu?>，为方便计算，赔率按照2倍，如需更精准计划，请<a href="#">点击联系客服!</a></p>
+    <?php } ?>
+</div>
+<?php } ?>
+<ul>
+    <?php
+
+
     if ($totalNumber>0){
-
-        $countcount=0;
-        $perNumber=$pgs; //每页显示的记录数
-        $page=$pg; //获得当前的页面值
-        if (!isset($page)) $page=1;
-
-        $totalPage=ceil($totalNumber/$perNumber); //计算出总页数
-        $startCount=($page-1)*$perNumber; //分页开始,根据此方法计算出开始的记录
-        $data = $mydb->row($tableStr2,$fieldsStr2,$whereStr2.' '.$orderStr." limit $startCount,$perNumber");
-
-
-
         $oj = json_decode($data[0][3]);
 
 
