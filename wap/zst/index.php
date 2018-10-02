@@ -185,7 +185,7 @@ $toTime=$_GET['toTime'];
 
         $totalPage = ceil($totalNumber / $perNumber); //计算出总页数
         $startCount = ($page - 1) * $perNumber; //分页开始,根据此方法计算出开始的记录
-        $data1 = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderSt2 . " limit $startCount,$perNumber");
+        $data1 = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderStr2 . " limit $startCount,$perNumber");
         if($data1) foreach($data1 as $index=>$var){
             if($var[5]=="1" || $var[5]=="2" ){
                 $allprofit = $var[4];
@@ -210,7 +210,7 @@ $toTime=$_GET['toTime'];
 
 
     if ($totalNumber>0){
-        $data = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderSt1 . " limit $startCount,$perNumber");
+        $data = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderStr1 . " limit $startCount,$perNumber");
 
         if($allgameover==0){
             $oj = json_decode($data[0][3]);
