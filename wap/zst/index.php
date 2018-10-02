@@ -284,7 +284,7 @@ $toTime=$_GET['toTime'];
             if(intval($qihao)<24){
                 continue;
             }
-            if($allgameover!=0 && intval($allqihao)>intval($qihao) ){
+            if($allgameover!=0 && intval($allqihao)<=intval($qihao) ){
                 continue;
             }
             $biger23 = intval($qihao) > 23;
