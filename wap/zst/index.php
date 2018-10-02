@@ -196,8 +196,6 @@ $toTime=$_GET['toTime'];
     }
 ?>
 
-2:<?= $allprofit*$touzhu?>
-3:<?= $allgameover?>
 <?php if($allgameover!=0) {?>
 <div class="summary">
     <?php if($allgameover=="1") {?>
@@ -212,10 +210,10 @@ $toTime=$_GET['toTime'];
 
 
     if ($totalNumber>0){
-        $data1 = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderSt1 . " limit $startCount,$perNumber");
-        $oj = json_decode($data[0][3]);
+        $data = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderSt1 . " limit $startCount,$perNumber");
 
         if($allgameover==0){
+            $oj = json_decode($data[0][3]);
             if($oj->QIANSHAN->currResult==1){
                 $yucedata1 = $oj->QIANSHAN->nextData;
                 $yucebeishu1 = $oj->QIANSHAN->nextBeishu;
