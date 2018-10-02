@@ -187,8 +187,7 @@ $toTime=$_GET['toTime'];
         if($data) foreach($data as $index=>$var){
             $todayisgameover = $var[5];
             if($todayisgameover=="1" || $todayisgameover=="2" ){
-                $profit = $var[4];
-                $allprofit = $profit;
+                $allprofit = $var[4];
                 $allgameover = $todayisgameover;
                 break;
             }
@@ -196,8 +195,8 @@ $toTime=$_GET['toTime'];
     }
 ?>
 
-<?= $allprofit*$touzhu?>
-<?= $allgameover?>
+2:<?= $allprofit*$touzhu?>
+3:<?= $allgameover?>
 <?php if($allgameover) {?>
 <div class="summary">
     <?php if($allgameover=="1") {?>
