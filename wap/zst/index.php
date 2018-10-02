@@ -186,10 +186,9 @@ $toTime=$_GET['toTime'];
         $startCount = ($page - 1) * $perNumber; //分页开始,根据此方法计算出开始的记录
         $data = $mydb->row($tableStr2, $fieldsStr2, $whereStr2 . ' ' . $orderStr . " limit $startCount,$perNumber");
         if($data) foreach($data as $index=>$var){
-            $todayisgameover = $var[5];
-            if($todayisgameover=="1" || $todayisgameover=="2" ){
+            if($var[5]=="1" || $var[5]=="2" ){
                 $allprofit = $var[4];
-                $allgameover = $todayisgameover;
+                $allgameover = $var[5];
                 break;
             }
         }
