@@ -196,12 +196,14 @@ $toTime=$_GET['toTime'];
     }
 ?>
 
+<?= $allprofit*$touzhu?>
+<?= $allgameover?>
 <?php if($allgameover) {?>
 <div class="summary">
     <?php if($allgameover=="1") {?>
-        <p>本日已止盈，止盈金额<?= $profit*$touzhu?>，为方便计算，赔率按照2倍，如需更精准计划，请<a href="#">点击联系客服!</a></p>
+        <p>本日已止盈，止盈金额<?= $allprofit*$touzhu?>，为方便计算，赔率按照2倍，如需更精准计划，请<a href="#">点击联系客服!</a></p>
     <?php }else {?>
-        <p>本日已止亏，止亏金额<?= $profit*$touzhu?>，为方便计算，赔率按照2倍，如需更精准计划，请<a href="#">点击联系客服!</a></p>
+        <p>本日已止亏，止亏金额<?= $allprofit*$touzhu?>，为方便计算，赔率按照2倍，如需更精准计划，请<a href="#">点击联系客服!</a></p>
     <?php } ?>
 </div>
 <?php } ?>
