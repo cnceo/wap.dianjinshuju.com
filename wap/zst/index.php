@@ -48,6 +48,13 @@ $isgameover = false;
 
 $fromTime=$_GET['fromTime'];
 $toTime=$_GET['toTime'];
+
+if(!$fromTime){
+    $fromTime=strtotime($dateTime);
+} else{
+    $fromTime=strtotime($fromTime)+24*3600;
+} 
+if($toTime) $toTime=strtotime($toTime)+24*3600;
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:esun="" style="font-size: 15.525px;"><head>
     <title>官方网站</title>
@@ -125,7 +132,7 @@ $toTime=$_GET['toTime'];
 <body>
 <div class="head">
     <a href="/index.php"><返回</a>
-    <label>重庆时时彩五星定位</label>
+    <label><?= $fromTime?>重庆时时彩五星定位</label>
     <div id="more">
         <span></span><span></span><span></span>
     </div>
@@ -143,12 +150,7 @@ $toTime=$_GET['toTime'];
 
 
 <?php
-    if(!$fromTime){
-        $fromTime=strtotime($dateTime);
-    } else{
-        $fromTime=strtotime($fromTime)+24*3600;
-    } 
-    if($toTime) $toTime=strtotime($toTime)+24*3600;
+    
 
     $touzhu = 2*5;
 
