@@ -288,7 +288,7 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
             $isgameover = $var[5];
             $qihao = substr($var[1],strlen($var[1])- 3,3);
             if(intval($qihao)<24){
-                continue;
+                //continue;
             }
             if($allgameover!=0 && intval($allqihao)<=intval($qihao) ){
                 continue;
