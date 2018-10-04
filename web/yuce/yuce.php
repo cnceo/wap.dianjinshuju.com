@@ -102,6 +102,7 @@ function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf,$dateTime){
             $houshantotal += $func_ext[HOUSHAN]['nextProfit'];
             $zhongheshantotal += $func_ext[ZHONGHE]['nextProfit'];
         }
+        echo '前三盈利：'.$qianshantotal.'后三盈利：'.$houshantotal.'总和盈利：'.$zhongheshantotal';
         $all23Datas = array($qianshantotal=>QIANSHAN,$houshantotal=>HOUSHAN,$zhongheshantotal=>ZHONGHE);
         krsort($all23Datas);
         $index = 1;
