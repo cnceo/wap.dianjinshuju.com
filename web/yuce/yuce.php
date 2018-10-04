@@ -183,6 +183,23 @@ function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf,$dateTime){
                 }
 
             }
+        }else if($qihao==23){
+            $yuceData[$data[1]['function']]['currResult']=$data[0]['currResult'];
+            if($data[0]['currResult']==1){
+                //$yuceData[$data[1]['function']]['currResult']=1;
+                $yuceData[$data[1]['function']]['nextBeishu']=1;
+                $yuceData[$data[1]['function']]['beishuIndex']=0;
+                $yuceData[$data[1]['function']]['nextRound']=1;
+
+                if(HOUSHAN == $data[0]['function']){
+                    $yuceData[$data[1]['function']]['nextData'] = ($newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
+                }else if(QIANSHAN == $data[0]['function']){
+                    $yuceData[$data[1]['function']]['nextData'] = ($newDataArray[0]+$newDataArray[1]+$newDataArray[2])%10 ;
+                }else{
+                    $yuceData[$data[1]['function']]['nextData'] = ($newDataArray[0]+$newDataArray[1]+$newDataArray[2]+$newDataArray[3]+$newDataArray[4])%10 ;
+                }
+
+            }
         }else{
 
             if(!$isgameover&&$zhiying<=$oldprofit){
