@@ -335,10 +335,10 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
                 echo '<label><span >止</span></label>';
                 echo '<label><span >下注</span></label>';
             }else if($var[1]<= (date("Ymd",$fromTime)."-023")){
-                echo '<label><span >在</span></label>';
-                echo '<label><span >分</span></label>';
-                echo '<label><span >析</span></label>';
-                echo '<label><span >中</span></label>';
+                echo '<label><span >前三'.$oj->QIANSHAN->nextData.'|'.$oj->QIANSHAN->nextBeishu*$touzhu.'|'.$oj->QIANSHAN->nextProfit*$touzhu.'</span></label>';
+                echo '<label><span >后三'.$oj->HOUSHAN->nextData.'|'.$oj->HOUSHAN->nextBeishu*$touzhu.'|'.$oj->HOUSHAN->nextProfit*$touzhu.'</span></label>';
+                echo '<label><span >总和'.$oj->ZHONGHE->nextData.'|'.$oj->ZHONGHE->nextBeishu*$touzhu.'|'.$oj->ZHONGHE->nextProfit*$touzhu.'</span></label>';
+                echo '<label><span >分析中</span></label>';
 
             }else{
                 if($zhong > 0){
