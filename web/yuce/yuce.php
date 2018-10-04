@@ -46,7 +46,7 @@ $oldId = 0;
 $oldData = array();
 if($data) foreach($data as $index=>$var){
     echo '<td class="wdh" align="center"><div class="ball05">'.$var[0].'</div></td>';
-    $oldData = clac($oldData,$var[0],$var[2],$oldId,$index+1,$mydb,$conf);
+    $oldData = clac($oldData,$var[0],$var[2],$oldId,$index+1,$mydb,$conf,$dateTime);
     $oldId = $var[0];
 }
 
@@ -59,11 +59,7 @@ if($data) foreach($data as $index=>$var){
  * @param $newData 当前24期公彩数据
  * @return array
  */
-function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf){
-    $dateTime = $_GET['dateTime'];
-    if(!$dateTime){
-        $dateTime = date('Ymd',time());
-    }
+function clac($oldData,$newId,$newData,$oldId,$qihao,$mydb,$conf,$dateTime){
 //    $dateTime = "20180917";
     $beishu=array('1','2','4','4','8','16','20','40','80');
     $yuceData = array();
