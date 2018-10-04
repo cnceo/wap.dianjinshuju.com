@@ -132,7 +132,7 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
 <body>
 <div class="head">
     <a href="/index.php"><返回</a>
-    <label><?= date('Ymd',$fromTime)?>-<?= date('Ymd',$toTime)?>重庆时时彩五星定位</label>
+    <label><?= date('Ymd',$fromTime)?>重庆时时彩五星定位</label>
     <div id="more">
         <span></span><span></span><span></span>
     </div>
@@ -288,7 +288,7 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
             $isgameover = $var[5];
             $qihao = substr($var[1],strlen($var[1])- 3,3);
             if(intval($qihao)<24){
-                //continue;
+                continue;
             }
             if($allgameover!=0 && intval($allqihao)<=intval($qihao) ){
                 continue;
