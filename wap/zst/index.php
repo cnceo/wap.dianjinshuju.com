@@ -52,7 +52,7 @@ $toTime=$_GET['toTime'];
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:esun="" style="font-size: 15.525px;"><head>
     <title>官方网站</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="refresh" content="5">
+<!--     <meta http-equiv="refresh" content="5"> -->
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
     <meta http-equiv="Pragma" content="no-cache">
     <link rel="stylesheet" href="/css/nsc_m/list.css?v=1.17.2.1">
