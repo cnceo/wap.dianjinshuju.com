@@ -143,7 +143,11 @@ $toTime=$_GET['toTime'];
 
 
 <?php
-    if(!$fromTime) $fromTime=strtotime($dateTime);
+    if(!$fromTime){
+        $fromTime=strtotime($dateTime);
+    } else{
+        $fromTime=strtotime($fromTime)+24*3600;
+    } 
     if($toTime) $toTime=strtotime($toTime)+24*3600;
 
     $touzhu = 2*5;
