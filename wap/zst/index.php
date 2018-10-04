@@ -52,7 +52,7 @@ $toTime=$_GET['toTime'];
 if(!$fromTime){
     $fromTime=strtotime($dateTime);
 } else{
-    $fromTime=strtotime($fromTime)+24*3600;
+    $fromTime=strtotime($fromTime);
 } 
 if($toTime) $toTime=strtotime($toTime)+24*3600;
 ?>
@@ -132,7 +132,7 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
 <body>
 <div class="head">
     <a href="/index.php"><返回</a>
-    <label><?= $fromTime?>重庆时时彩五星定位</label>
+    <label><?= date('Ymd',$fromTime)?>-<?= date('Ymd',$endTime)?>重庆时时彩五星定位</label>
     <div id="more">
         <span></span><span></span><span></span>
     </div>
