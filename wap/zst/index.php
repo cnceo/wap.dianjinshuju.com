@@ -334,7 +334,7 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
                 echo '<label><span >停</span></label>';
                 echo '<label><span >止</span></label>';
                 echo '<label><span >下注</span></label>';
-            }else if($var[1]<= (date("Ymd",time())."-023")){
+            }else if($var[1]<= (date("Ymd",$fromTime)."-023")){
                 echo '<label><span >在</span></label>';
                 echo '<label><span >分</span></label>';
                 echo '<label><span >析</span></label>';
