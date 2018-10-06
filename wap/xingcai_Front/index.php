@@ -21,7 +21,7 @@
         .guangao .index_bigbanner{font-size:12px;flex:9;overflow:hidden}
         .guangao .index_bigbanner img{width:25px;height:25px;}
         .guangao .index_bigbanner a{color:#000;}
-        .guangao .index_bigbanner .swiper-container .swiper-wrapper .swiper-slide{display:flex;align-items:center;padding-right:5px;}
+        .guangao .index_bigbanner .swiper-container .swiper-wrapper .swiper-slide{display:flex;align-items:center;}
         ul{margin:20px 0 60px;display: table;}
         ul li{width:25%;height:140px;font-size:14px;margin:0 4%;float:left;}
         ul li .top{text-align:center;background:rgba(177,202,230,0.3);padding:2px 0 0 2px;margin-bottom:2px;}
