@@ -108,6 +108,7 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
         #side .allWidthLink{padding:10px 10px 10px 25px;border-bottom:1px solid #53cece;}
         #side .allWidthLink a{color:#fff;font-size:12px;width:100%;white-space:nowrap;display:inline-block;}
         #side .signOut{color:#fff;font-size:12px;position:absolute;right:5px;bottom:10px;}
+        #mask{position:fixed;width:100%;height:100%;background:rgba(0,0,0,0);left:0;top:0;z-index:3;display:none;}
     </style>
 
     <script type="text/javascript">
@@ -364,12 +365,13 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
 
     <?php } ?>
 </ul>
+
 <div class="tab">
     <a href="http://wap.dianjinshuju.com/">首页</a>
     <a href="#" class="on">预测</a>
     <a href="/index.php/safe/Personal">我的</a>
 </div>
-
+<div id="mask"></div>
 <div id="side">
     <p><a href="/?index.php">首页</a></p>
     <p>用户中心</p>
@@ -421,8 +423,6 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
     });
 
 </script>
-
-
 
 
 <script type="text/javascript">
