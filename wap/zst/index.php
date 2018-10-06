@@ -28,6 +28,7 @@ if(!$typeid) $typeid=14;
 //每页默认显示
 $pgs=intval($_GET['pgs']);
 $dateTime = date('Ymd',time());
+$searchTime = date("Ymd",strtotime("-1 day"));
 if(!in_array($pgs,$pgsid)) die("pgs error");
 if(!$pgs) $pgs=120;
 //当前页面
@@ -49,11 +50,16 @@ $isgameover = false;
 $fromTime=$_GET['fromTime'];
 $toTime=$_GET['toTime'];
 
+
+
 if(!$fromTime){
     $fromTime=strtotime($dateTime);
 } else{
     $fromTime=strtotime($fromTime);
-} 
+    if($fromTime < strtotime($dateTime)){
+        $searchTime = $dateTime;
+    }
+}
 if($toTime) $toTime=strtotime($toTime)+24*3600;
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:esun="" style="font-size: 15.525px;"><head>
@@ -368,7 +374,7 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
 
 <div class="tab">
     <a href="http://wap.dianjinshuju.com/">首页</a>
-    <a href="#" class="on">预测</a>
+    <a href="/zst/?typeid=1&fromTime=<?php echo $searchTime ?>&toTime=<?php echo $searchTime ?>" class="on"><?php echo $searchTime ?>期结果</a>
     <a href="/index.php/safe/Personal">我的</a>
 </div>
 <div id="mask"></div>
