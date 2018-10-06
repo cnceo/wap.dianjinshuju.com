@@ -18,7 +18,7 @@
         .Advertisement{width:100%;}
         .guangao{display:flex;align-items:center;}
         .guangao img{flex:1;}
-        .guangao .index_bigbanner{font-size:12px;flex:9;}
+        .guangao .index_bigbanner{font-size:12px;flex:9;overflow:hidden}
         .guangao .index_bigbanner img{width:25px;height:25px;}
         .guangao .index_bigbanner a{color:#000;}
         .guangao .index_bigbanner .swiper-container .swiper-wrapper .swiper-slide{display:flex;align-items:center;padding-right:5px;}
