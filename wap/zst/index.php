@@ -422,6 +422,17 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
         //     var index = $(this).index();
         //     $('.content3').eq(index).show().siblings('.content3').hide();
         // });
+        $('.tab a').click(function(){
+            $(this).addClass('on').siblings('a').removeClass('on');
+        })
+        $("#more").click(function(){
+            $('#side').css('left','50%');
+            $('#mask').css('display','block');
+        })
+        $("#mask").click(function(){
+            $('#side').css('left','100%');
+            $('#mask').css('display','none');
+        })
         $('body').bind('click', function(event) {//侧边菜单栏
             // IE支持 event.srcElement ， FF支持 event.target
             // var evt = event.srcElement ? event.srcElement : event.target;
