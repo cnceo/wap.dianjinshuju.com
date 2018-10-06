@@ -407,21 +407,21 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
 <script type="text/javascript">
 
     $(function() {
-        $('.tableHead span').click(function(){//‘用户中心’，‘团队管理’，‘客服服务’之间的切换
-            $(this).addClass('active').siblings('span').removeClass('active');
-            var index = $(this).index();
-            $('.content1').eq(index).show().siblings('.content1').hide();
-        });
-        $('.userCenter .tab span').click(function(){//‘用户中心’页面下菜单之间的切换
-            $(this).addClass('active').siblings('span').removeClass('active');
-            var index = $(this).index();
-            $('.content2').eq(index).show().siblings('.content2').hide();
-        });
-        $('.teamManage .tab span').click(function(){//‘团队管理’页面下菜单之间的切换
-            $(this).addClass('active').siblings('span').removeClass('active');
-            var index = $(this).index();
-            $('.content3').eq(index).show().siblings('.content3').hide();
-        });
+        // $('.tableHead span').click(function(){//‘用户中心’，‘团队管理’，‘客服服务’之间的切换
+        //     $(this).addClass('active').siblings('span').removeClass('active');
+        //     var index = $(this).index();
+        //     $('.content1').eq(index).show().siblings('.content1').hide();
+        // });
+        // $('.userCenter .tab span').click(function(){//‘用户中心’页面下菜单之间的切换
+        //     $(this).addClass('active').siblings('span').removeClass('active');
+        //     var index = $(this).index();
+        //     $('.content2').eq(index).show().siblings('.content2').hide();
+        // });
+        // $('.teamManage .tab span').click(function(){//‘团队管理’页面下菜单之间的切换
+        //     $(this).addClass('active').siblings('span').removeClass('active');
+        //     var index = $(this).index();
+        //     $('.content3').eq(index).show().siblings('.content3').hide();
+        // });
         $('body').bind('click', function(event) {//侧边菜单栏
             // IE支持 event.srcElement ， FF支持 event.target
             // var evt = event.srcElement ? event.srcElement : event.target;
