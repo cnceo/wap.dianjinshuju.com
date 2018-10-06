@@ -407,21 +407,6 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
 <script type="text/javascript">
 
     $(function() {
-        // $('.tableHead span').click(function(){//‘用户中心’，‘团队管理’，‘客服服务’之间的切换
-        //     $(this).addClass('active').siblings('span').removeClass('active');
-        //     var index = $(this).index();
-        //     $('.content1').eq(index).show().siblings('.content1').hide();
-        // });
-        // $('.userCenter .tab span').click(function(){//‘用户中心’页面下菜单之间的切换
-        //     $(this).addClass('active').siblings('span').removeClass('active');
-        //     var index = $(this).index();
-        //     $('.content2').eq(index).show().siblings('.content2').hide();
-        // });
-        // $('.teamManage .tab span').click(function(){//‘团队管理’页面下菜单之间的切换
-        //     $(this).addClass('active').siblings('span').removeClass('active');
-        //     var index = $(this).index();
-        //     $('.content3').eq(index).show().siblings('.content3').hide();
-        // });
         $('.tab a').click(function(){
             $(this).addClass('on').siblings('a').removeClass('on');
         })
@@ -433,26 +418,6 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
             $('#side').css('left','100%');
             $('#mask').css('display','none');
         })
-        $('body').bind('click', function(event) {//侧边菜单栏
-            // IE支持 event.srcElement ， FF支持 event.target
-            // var evt = event.srcElement ? event.srcElement : event.target;
-            // var evtParent = event.srcElement ? event.srcElement : event.target;
-            var evt = $(event)[0].target;
-            var evtParent = $(event)[0].target.parentElement;
-            var evtParentParent = $(event)[0].target.parentElement.parentElement?$(event)[0].target.parentElement.parentElement:'';
-            // console.log($(event));
-            // console.log($(event)[0].target);
-            // console.log($(event)[0].target.parentElement);
-            // console.log($(event)[0].target.parentElement.parentElement);
-            if(evt.id == 'more'||evtParent.id == 'more'){
-                $('#side').css('left','50%');
-                return;
-            }else if(evt.id == 'side'||evtParent.id == 'side'||evtParentParent.id == 'side'){// 如果是元素本身，则返回
-                return
-            }else{
-                $('#side').css('left','100%'); // 如不是则隐藏元素
-            }
-        });
     });
 
 </script>
