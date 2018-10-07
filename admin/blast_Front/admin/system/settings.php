@@ -178,7 +178,7 @@
             </tr>
             <tr>
                 <td>充值佣金 活动</td>
-                <td>每天首次充值金额<input class="textWid1" type="text" value="<?=$this->settings['rechargeCommissionAmount']?>" name="rechargeCommissionAmount"/>元以上，上家送<input type="text" class="textWid1" value="<?=$this->settings['rechargeCommission']?>" name="rechargeCommission"/>元佣金，上上家送<input class="textWid1" type="text" value="<?=$this->settings['rechargeCommission2']?>" name="rechargeCommission2"/>元佣金，如果为0则关闭活动</td>
+                <td>每天首次充值金额<input class="textWid1" type="text" value="<?=$this->settings['rechargeCommissionAmount']?>" name="rechargeCommissionAmount"/>元以上，上家送<input type="text" class="textWid1" value="<?=$this->settings['rechargeCommission']?>" name="rechargeCommission"/>佣金比例，上上家送<input class="textWid1" type="text" value="<?=$this->settings['rechargeCommission2']?>" name="rechargeCommission2"/>佣金比例，如果为0则关闭活动</td>
             </tr>
             <tr>
                 <td>消费佣金 活动</td>
