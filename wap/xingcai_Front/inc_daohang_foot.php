@@ -38,10 +38,10 @@
         </div>
         <div class="allWidthLink" style="border:none;">
             <a href="#">微信客服：dianjinshuju99</a>
-            <a href="#">QQ客服：302288999</a>
-            <a href="#">点金①群：302288999</a>
-            <a href="#">点金②群：302288999</a>
-            <a href="#">商务合作：301199</a>
+            <a href="#">QQ客服：3476672125</a>
+            <a href="#">点金①群：795103784</a>
+            <a href="#">点金②群：864452778</a>
+            <a href="#">商务合作：3599809366</a>
         </div>
         <a class="signOut" href="javascript:m_loginout()">退出登录</a>
     </div>

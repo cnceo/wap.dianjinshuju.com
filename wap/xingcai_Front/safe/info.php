@@ -58,8 +58,8 @@
     </td>
   </tr>
 </tbody></table>
-    <div class="list_btn_box"><input type="submit" <?=$this->iff($flag, 'disabled')?> value="确认" class="buttonnormal">　
-        <input type="button" value="返回" onclick="checkbackspace();" class="formReset"></div>
+    <div class="list_btn_box"><input type="lisubmit" <?=$this->iff($flag, 'disabled')?> value="确认" class="buttonnormal">　
+        <input type="button" value="返回" oncck="checkbackspace();" class="formReset"></div>
 
 </form>
 

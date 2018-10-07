@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/newskin/liaotian/swiper.min.css">
     <style type="text/css">
         html{width:100%;height:100%;}
-        body {width:100%;height:100%;background:url(img/lit.jpg) no-repeat center;background-size:100% 100%;}
+        body {width:100%;height:100%;background:url(/images/nsc_m/lit.jpg) no-repeat center;background-size:100% 100%;}
         .head{width:100%;height:50px;background-color:#004BC8;display:flex;align-items:center;justify-content:space-between;position:fixed;top:0;left:0;}
         .head img{height:50px;}
         .head label{color:#fff;line-height:50px;font-size:16px;}
@@ -56,6 +56,7 @@
         #side .allWidthLink a{color:#fff;font-size:12px;width:100%;white-space:nowrap;display:inline-block;}
         #side .signOut{color:#fff;font-size:12px;position:absolute;right:5px;bottom:10px;}
     </style>
+    <script type='text/javascript' src="https://cdn.staticfile.org/clipboard.js/1.5.15/clipboard.min.js"></script>
 </head>
 
 <body>
@@ -72,7 +73,7 @@
     <div class="index_bigbanner">
         <div class="swiper-container swiper-container-horizontal swiper-container-wp8-horizontal">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><a href="#"> 点金EA将于2018年10月31日推出EA2000自动下单系统，查看详情</a></div>
+                <div class="swiper-slide"><a href="#"> 点金EA将于2018年10月31日推出EA2000自动下单系统</a></div>
                 <div class="swiper-slide"><a href="#"> 稳定不赔的智能刷量系统，只接受最多998预定名额，速度抢购</a></div>
                 <div class="swiper-slide"><a href="#"> 金秋十月，让我们携手共进，将数据转化为实实在在的财富</a></div>
             </div>
@@ -105,7 +106,7 @@
             <p class="title">极限回补</p>
             <div class="description">
                 <p>本金500</p>
-                <p>日盈10%以上</p>
+                <p>日盈5%以上</p>
             </div>
         </div>
         <a href="#">了解详情</a>
@@ -162,7 +163,7 @@
         <span style="background-color:#004BC8;">承诺服务</span>
         <span>24H服务</span>
         <span>免费升级</span>
-        <span>亏损退费补偿</span>
+        <span>亏损补偿</span>
     </div>
     <p class="description">
         实盘观摩https://www.fxunion.org/3103 IC实盘开始于7.3日，入金5000日收益10%左右，目前收益已达201%，最大回撤为22.6%，浮亏25%左右，高收益由AE自动交易完成，适时提取本金，让利润奔跑。敬请关注！一个能稳定赢利的EA自动交易程序帮助投资者做到1-999%年化收益。本金交易允许最大回撤25%，提出本金留利润交易允许最大回撤35%。
@@ -188,7 +189,7 @@
         <span style="background-color:#004BC8;">承诺服务</span>
         <span>24H服务</span>
         <span>免费升级</span>
-        <span>亏损退费补偿</span>
+        <span>亏损补偿</span>
     </div>
     <p class="description">
         针对腾讯分分彩的刷量程序，程序分高低档，低档保证5-10倍流水而不亏损，高档对本金要求高，
@@ -215,7 +216,7 @@
         <span style="background-color:#004BC8;">承诺服务</span>
         <span>24H服务</span>
         <span>免费升级</span>
-        <span>亏损退费补偿</span>
+        <span>亏损补偿</span>
     </div>
     <p class="description">
         针对北京赛车的极限算法，回溯一年历史，表现稳定，参数及资金策略固定不可调。
@@ -232,6 +233,7 @@
     <div class="product">
         <p>算法开发</p>
         <p>针对彩种：时时彩、北京赛车、快3</p>
+        <p>价格商议，视算法难易程度和客户要求而定</p>
     </div>
     <div class="summary">
         <span style="background-color:#004BC8;">承诺服务</span>
@@ -241,8 +243,8 @@
     <p class="description">
         智能分析，智慧选号，智享未来！
     </p>
-    <div class="buy">
-        交付时间商议 <a href="/index.php/cash/recharge"><button>立即购买</button></a>
+    <div class="buy copyBtn" data-clipboard-text="3599809366">
+        交付时间商议 <button>联系商务客服</button>
     </div>
 </div>
 <div class="preview new_hide">
@@ -261,8 +263,8 @@
         不是每个平台都能实现，如果是可实现的，则在决定合作后15天左右交付客户多用户使用则另行商议。
     </p>
     <p class="description">智能分析，智慧选号，智享未来！</p>
-    <div class="buy">
-        15-30天开发周期 <a href="/index.php/cash/recharge"><button>立即购买</button></a>
+    <div class="buy copyBtn2" data-clipboard-text="3599809366">
+        15-30天开发周期 <button>立即购买</button>
     </div>
 </div>
 <div class="preview new_hide">
@@ -301,10 +303,10 @@
     </div>
     <div class="allWidthLink" style="border:none;">
         <a href="#">微信客服：dianjinshuju99</a>
-        <a href="#">QQ客服：302288999</a>
-        <a href="#">点金①群：302288999</a>
-        <a href="#">点金②群：302288999</a>
-        <a href="#">商务合作：301199</a>
+        <a href="#">QQ客服：3476672125</a>
+        <a href="#">点金①群：795103784</a>
+        <a href="#">点金②群：864452778</a>
+        <a href="#">商务合作：3599809366</a>
     </div>
     <a class="signOut" href="/index.php/user/logout">退出登录</a>
 </div>
@@ -313,6 +315,14 @@
 <script type="text/javascript" src="/newskin/liaotian/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="/newskin/liaotian/swiper.min.js"></script>
 <script type="text/javascript">
+    var clipboard = new Clipboard('.copyBtn').on('success', function(e) {
+        var e = e || window.event;
+        alert("QQ号："+e.text+"复制成功");
+    }).on('error', function(e) {});
+    var clipboard2 = new Clipboard('.copyBtn2').on('success', function(e) {
+        var e = e || window.event;
+        alert("QQ号："+e.text+"复制成功");
+    }).on('error', function(e) {});
 
     $(function() {
         $('.tab a').click(function(){
