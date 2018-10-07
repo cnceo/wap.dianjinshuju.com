@@ -306,7 +306,7 @@
         <a href="#">点金②群：302288999</a>
         <a href="#">商务合作：301199</a>
     </div>
-    <a class="signOut" href="login.html">退出登录</a>
+    <a class="signOut" href="/index.php/user/logout">退出登录</a>
 </div>
 
 

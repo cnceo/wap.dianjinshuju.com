@@ -11,15 +11,15 @@
 <script type="text/javascript" src="/skin/main/reglogin.js"></script>
 <script type="text/javascript" src="/skin/js/gamecommon.js"></script>
    <style media="screen">
-       html{width:100%;height: 100%;}
-       body {width:100%;height: 100%;margin:0;background:url(/images/timg.jpg) no-repeat center;background-size:100% 100%;}
+       html{width:100%;height:100%;}
+       body {width:100%;height:100%;margin:0;background:url(/images/timg.jpg) no-repeat center;background-size:100% 100%;}
        .logo{width:110px;height:135px;background-color:#fff;display:block;margin:0 auto;margin-top:30px;margin-bottom:30px;}
-       input{display:block;margin:0 auto;width:80%;margin-bottom:30px;height:40px;background:rgba(157,157,157,0.7);padding:0 3%;border:none;}
-       input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #B1E8FF;}
-       .check{width:86%;margin:0 auto;margin-right: 17px;display:flex;justify-content:flex-start;align-items:center;}
-       .check input{width:40%;margin:0;display:inline-block;}
-       .check label{display:inline-block;width:100px;height:40px;background:rgba(157,157,157,0.9);margin-left:15px;line-height:40px;color:#B4F0FF;text-align:center;font-size:25px;}
-       button{width:86%;height:40px;text-align:center;font-size:25px;color:#fff;padding:0;display:block;margin:0 auto;line-height:40px;margin-top:35px;background:rgba(23,109,113,0.8);border:none;}
+       input{display:block;margin:0 auto;width:80%;margin-bottom:30px;height:44px;background:rgba(157,157,157,0.7);padding:0 3%;border:none;color:#fff;font-size:16px;}
+       input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #B1E8FF;font-size:16px;}
+       .check{width:80%;margin:0 auto;display:flex;justify-content:flex-start;align-items:center;}
+       .check input{width:49%;margin:0;display:inline-block;}
+       .check label{display:inline-block;width:49%;height:44px;background:rgba(157,157,157,0.9);margin-left:2%;line-height:44px;color:#B4F0FF;text-align:center;font-size:30px;}
+       button{width:86%;height:44px;text-align:center;font-size:25px;color:#fff;padding:0;display:block;margin:0 auto;line-height:44px;margin-top:35px;background:rgba(23,109,113,0.8);border:none;}
        .bottom{color:#B1E8FF;text-align:center;width:100%;margin-top:80px;}
     </style>
 	<!--<script>alert('咨询QQ：925475');</script>-->
