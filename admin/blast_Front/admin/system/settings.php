@@ -178,6 +178,10 @@
 			</tr>
 			<tr>
 				<td>充值佣金 活动</td>
+                <td>
+                    <label><input type="radio" value="1" name="rechargeCommissionType" <?=$this->iff($this->settings['rechargeCommissionType'],'checked="checked"')?>/>金额</label>
+                    <label><input type="radio" value="0" name="rechargeCommissionType" <?=$this->iff(!$this->settings['rechargeCommissionType'],'checked="checked"')?>/>比例</label>
+                </td>
 				<td>每天首次充值金额<input class="textWid1" type="text" value="<?=$this->settings['rechargeCommissionAmount']?>" name="rechargeCommissionAmount"/>元以上，上家送<input type="text" class="textWid1" value="<?=$this->settings['rechargeCommission']?>" name="rechargeCommission"/>元佣金，上上家送<input class="textWid1" type="text" value="<?=$this->settings['rechargeCommission2']?>" name="rechargeCommission2"/>元佣金，如果为0则关闭活动</td>
 			</tr>
 			<tr>
