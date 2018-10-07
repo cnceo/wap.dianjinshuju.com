@@ -290,16 +290,16 @@ class Business extends AdminBase{
 
 		if($parentId=$this->getValue($sql, $uid)){
 			if($pro=floatval($this->settings['rechargeCommission'])){
-				//$log['coin']=$pro * $coin /100;
-				$log['coin']=$pro;
+				$log['coin']=$pro * $coin /100;
+//				$log['coin']=$pro;
 				$log['uid']=$parentId;
 				$this->addCoin($log);
 			}
 			
 			if($parentId=$this->getValue($sql, $parentId)){
 				if($pro=floatval($this->settings['rechargeCommission2'])){
-					//$log['coin']=$pro * $coin /100;
-					$log['coin']=$pro;
+					$log['coin']=$pro * $coin /100;
+//					$log['coin']=$pro;
 					$log['uid']=$parentId;
 					$this->addCoin($log);
 				}
