@@ -171,7 +171,7 @@
     <p class="description">一次合作，终生朋友！</p>
     <p class="description">高频彩精确制导专家-点金数据！</p>
     <div class="buy">
-        2018年10月1日前交付使用 <button>立即购买</button>
+        2018年10月1日前交付使用 <a href="/index.php/cash/recharge"><button>立即购买</button></a>
     </div>
 </div>
 <div class="preview new_hide">
@@ -198,7 +198,7 @@
     <p class="description">一次合作，终生朋友！</p>
     <p class="description">高频彩精确制导专家-点金数据！</p>
     <div class="buy">
-        2018年11月15日前交付使用 <button>立即购买</button>
+        2018年11月15日前交付使用 <a href="/index.php/cash/recharge"><button>立即购买</button></a>
     </div>
 </div>
 <div class="preview new_hide">
@@ -224,7 +224,7 @@
     <p class="description">一次合作，终生朋友！</p>
     <p class="description">高频彩精确制导专家-点金数据！</p>
     <div class="buy">
-        2018年11月31日前交付使用 <button>立即购买</button>
+        2018年11月31日前交付使用 <a href="/index.php/cash/recharge"><button>立即购买</button></a>
     </div>
 </div>
 <div class="preview new_hide">
@@ -242,7 +242,7 @@
         智能分析，智慧选号，智享未来！
     </p>
     <div class="buy">
-        交付时间商议 <button>立即购买</button>
+        交付时间商议 <a href="/index.php/cash/recharge"><button>立即购买</button></a>
     </div>
 </div>
 <div class="preview new_hide">
@@ -262,7 +262,7 @@
     </p>
     <p class="description">智能分析，智慧选号，智享未来！</p>
     <div class="buy">
-        15-30天开发周期 <button>立即购买</button>
+        15-30天开发周期 <a href="/index.php/cash/recharge"><button>立即购买</button></a>
     </div>
 </div>
 <div class="preview new_hide">

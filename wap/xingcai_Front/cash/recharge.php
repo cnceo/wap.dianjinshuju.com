@@ -53,7 +53,7 @@
                         </div>
                 </div>
 				<div class="item">
-                        <div class="item_l money_hanggao">会员等级：</div>
+                        <div class="item_l money_hanggao">充值类型：</div>
                         <div class="item_r">
 
                             <input type="hidden" name="amount" class="cz_input1" value="" id="ContentPlaceHolder1_txtMoney">

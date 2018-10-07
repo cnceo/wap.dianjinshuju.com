@@ -20,7 +20,7 @@
        .check input{width:40%;margin:0;display:inline-block;}
        .check label{display:inline-block;width:100px;height:40px;background:rgba(157,157,157,0.9);margin-left:15px;line-height:40px;color:#B4F0FF;text-align:center;font-size:25px;}
        button{width:86%;height:40px;text-align:center;font-size:25px;color:#fff;padding:0;display:block;margin:0 auto;line-height:40px;margin-top:35px;background:rgba(23,109,113,0.8);border:none;}
-       .bottom{position:absolute;bottom:30px;color:#B1E8FF;text-align:center;width:100%;}
+       .bottom{color:#B1E8FF;text-align:center;width:100%;margin-top:80px;}
     </style>
 	<!--<script>alert('咨询QQ：925475');</script>-->
     <script type="text/javascript">
@@ -149,7 +149,7 @@
 <input type="password" id="password" name="password" placeholder="请输入密码">
 <div class="check">
     <input type="text" id="vcode" name="vcode" maxlength="4"  placeholder="输入验证码" class="check" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
-    <label><img title="点击刷新" style="cursor:pointer;" id="dvcode" name="dvcode" src="/index.php/user/vcode/<?=$this->time?>"></label>
+    <label><img title="点击刷新" style="cursor:pointer;width:100%;height:100%;" id="dvcode" name="dvcode" src="/index.php/user/vcode/<?=$this->time?>"></label>
 </div>
 <button type="submit">登录</button>
 </form>
