@@ -272,9 +272,9 @@ class Business extends AdminBase{
 	public function rechargeCommission($coin, $uid, $rechargeId, $rechargeSerialize=''){
 		// 查检是否当天首次充值
 		$time=strtotime('00:00');
-		$sql="select id from {$this->prename}member_recharge where rechargeTime>=$time and `uid`=$uid limit 1,1";
-		
-		if($this->getValue($sql)) return ;
+//		$sql="select id from {$this->prename}member_recharge where rechargeTime>=$time and `uid`=$uid limit 1,1";
+//
+//		if($this->getValue($sql)) return ;
 		
 		// 加载系统设置
 		$this->getSystemSettings();
@@ -473,7 +473,8 @@ class Business extends AdminBase{
                 $this->updateRows($this->prename .'members', $memberpara, 'uid='. $data['uid']);
 				$this->addCoin(array(
 					'uid'=>$data['uid'],
-					'coin'=>$para['rechargeAmount'],
+//					'coin'=>$para['rechargeAmount'],
+					'coin'=>0,
 					'liqType'=>1,
 					'extfield0'=>$data['id'],
 					'extfield1'=>$data['rechargeId'],

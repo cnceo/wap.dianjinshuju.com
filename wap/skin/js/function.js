@@ -688,13 +688,13 @@ function teamBeforeAddMember(){
 	if(this.password.value.length<6){xingcai("登入密码至少6位数");return false;}
 	if(!this.cpasswd.value){xingcai("请确认登入密码");return false;}
 	if(document.getElementById('cpasswd').value!=this.password.value){xingcai("两次输入的登入密码不一样");return false;}
-	if(!this.qq.value){xingcai("请输入QQ帐号");return false;}
-	if(this.qq.value.length<5){xingcai("QQ帐号至少5位数");return false;}
-	if(!this.fanDian.value){xingcai("请输入返点");return false;}
-	if(parseFloat(this.fanDian.value)<0){xingcai("返点不能小于0%"); return false;}
-	if(parseFloat(this.fanDian.value)>parseFloat($(this.fanDian).attr('max'))){xingcai('返点不能大于'+$(this.fanDian).attr('max')); return false;}
-	var fanDianDiff= $(this.fanDian).attr('fanDianDiff');
-	if((this.fanDian.value*1000) % (fanDianDiff*1000)){xingcai('返点只能是'+fanDianDiff+'%的倍数');return false;}
+	// if(!this.qq.value){xingcai("请输入QQ帐号");return false;}
+	// if(this.qq.value.length<5){xingcai("QQ帐号至少5位数");return false;}
+	// if(!this.fanDian.value){xingcai("请输入返点");return false;}
+	// if(parseFloat(this.fanDian.value)<0){xingcai("返点不能小于0%"); return false;}
+	// if(parseFloat(this.fanDian.value)>parseFloat($(this.fanDian).attr('max'))){xingcai('返点不能大于'+$(this.fanDian).attr('max')); return false;}
+	// var fanDianDiff= $(this.fanDian).attr('fanDianDiff');
+	// if((this.fanDian.value*1000) % (fanDianDiff*1000)){xingcai('返点只能是'+fanDianDiff+'%的倍数');return false;}
 }
 //添加会员
 function teamAddMember(err, data){

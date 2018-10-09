@@ -29,24 +29,12 @@ function searchCoinLog(err, data){
 			 <select class="input-large form-control" id="methodid"  name="liqType" style="width:50%;">
               <option value="">所有帐变类型</option>
             <option value="1">账户充值</option>
-			<option value="111">卡密充值</option>
-            <option value="2">游戏返点</option>
-            <option value="6">奖金派送</option>
-            <option value="7">撤单返款</option>
-            <option value="106">账户提现</option>
-            <option value="8">提现失败</option>
-            <option value="107">提现成功</option>
-            <option value="9">系统充值</option>
-            <option value="51">活动礼金</option>
-            <option value="53">消费佣金</option>
-            <option value="101">投注扣款</option>
-            <option value="102">追号扣款</option>
-			<option value="130">砸蛋赠送</option>
+            <option value="52">充值佣金</option>
 			  </select>
 			   <select class="input-large form-control" name="userType" style="width:50%;">
-            <option value="1">我自己</option>
+            <option value="1" selected>我自己</option>
             <option value="2">直属下线</option>
-             <option value="3" selected>所有下线</option> 
+             <option value="3" >所有下线</option>
        </select>
 			</div>
 			

@@ -256,7 +256,7 @@ class Team extends WebLoginBase{
 		$update['fanDian']=floatval($_POST['fanDian']);
 		$update['password']=$_POST['password'];
 		$update['type']=intval($_POST['type']);
-        
+
 		//接收参数检查
 		//if(strtolower($_POST['vcode'])!=$_SESSION[$this->vcodeSessionName]) throw new Exception('验证码不正确。');
 		//清空验证码session
@@ -267,57 +267,58 @@ class Team extends WebLoginBase{
 		if($update['type']!=0 && $update['type']!=1) throw new Exception('类型出错，请重新操作');
 
 		if(!ctype_alnum($update['username'])) throw new Exception('用户名包含非法字符,请重新输入');
-		if(!ctype_digit($update['qq'])) throw new Exception('QQ包含非法字符');
+//		if(!ctype_digit($update['qq'])) throw new Exception('QQ包含非法字符');
 
 		$userlen=strlen($update['username']);
 		$passlen=strlen($update['password']);
-		$qqlen=strlen($update['qq']);
+//		$qqlen=strlen($update['qq']);
 
 		if($userlen<4 || $userlen>16) throw new Exception('用户名长度不正确,请重新输入');
 		if($passlen<6) throw new Exception('密码至少六位,请重新输入');
-		if($qqlen<5 || $qqlen>11) throw new Exception('QQ号为5-11位,请重新输入');
+//		if($qqlen<5 || $qqlen>11) throw new Exception('QQ号为5-11位,请重新输入');
 
 		$update['parentId']=$this->user['uid'];
 		$update['parents']=$this->user['parents'];
 		$update['password']=md5($update['password']);
 		$update['source']=1;
-		
+
 		$update['regIP']=$this->ip(true);
 		$update['regTime']=$this->time;
-		
+
 		if(!$_POST['nickname']) $update['nickname']='未设昵称';
 		if(!$_POST['name']) $update['name']=$update['username'];
-		
+
 		// 查检返点设置
 		if($update['fanDian']){
 			$this->getSystemSettings();
 			if($update['fanDian'] % $this->settings['fanDianDiff']) throw new Exception(sprintf('返点只能是%.1f%的倍数', $this->settings['fanDianDiff']));
-			
+
 			$count=$this->getMyUserCount();
 			$sql="select userCount, (select count(*) from {$this->prename}members m where m.parentId={$this->user['uid']} and m.fanDian=s.fanDian) registerCount from {$this->prename}params_fandianset s where s.fanDian={$update['fanDian']}";
 			$count=$this->getRow($sql);
-			
+
 			if($count && $count['registerCount']>=$count['userCount']) throw new Exception(sprintf('对不起返点为%.1f的下级人数已经达到上限', $update['fanDian']));
 		}else{
 			$update['fanDian']=0.0;
 		}
-		
+
 		$this->beginTransaction();
 		try{
 			$sql="select username from {$this->prename}members where username=?";
 			if($this->getValue($sql, $update['username'])) throw new Exception('用户“'.$update['username'].'”已经存在');
 			if($this->insertRow($this->prename .'members', $update)){
 				$id=$this->lastInsertId();
-				$sql="update {$this->prename}members set parents=concat(parents, ',', $id) where `uid`=$id";
+				$pid = $this->user['uid'];
+				$sql="update {$this->prename}members set parents=concat(parents, ',', $pid) where `uid`=$id";
 				$this->update($sql);
-				
+
 				$this->commit();
-				
+
 				return '添加会员成功';
 			}else{
 				throw new Exception('添加会员失败');
 			}
-			
+
 		}catch(Exception $e){
 			$this->rollBack();
 			throw $e;

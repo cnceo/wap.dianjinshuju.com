@@ -247,7 +247,8 @@ class User extends WebBase{
 			    if($this->getValue($sql, $para['username'])) throw new Exception('用户"'.$para['username'].'"已经存在');
 			    if($this->insertRow($this->prename .'members', $para)){
 				$id=$this->lastInsertId();
-				$sql="update {$this->prename}members set parents=concat(parents, ',', $id) where `uid`=$id";
+				$pid = $para['parentId'];
+				$sql="update {$this->prename}members set parents=concat(parents, ',', $pid) where `uid`=$id";
 				$this->update($sql);
                 
 				//注册活动
@@ -359,7 +360,8 @@ class User extends WebBase{
 			    if($this->getValue($sql, $para['username'])) throw new Exception('用户"'.$para['username'].'"已经存在');
 			    if($this->insertRow($this->prename .'members', $para)){
 				$id=$this->lastInsertId();
-				$sql="update {$this->prename}members set parents=concat(parents, ',', $id) where `uid`=$id";
+				$pid=$para['parentId'];
+				$sql="update {$this->prename}members set parents=concat(parents, ',', $pid) where `uid`=$id";
 				$this->update($sql);
                 
 				//注册活动

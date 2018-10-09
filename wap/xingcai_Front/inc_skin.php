@@ -32,7 +32,7 @@ $(function(){
 <script type="text/javascript" src="/js/nsc/main.js?v=1.16.12.4"></script>
 <!--消息控件-->
 <script type="text/javascript" src="/skin/js/onload.js"></script>
-<script type="text/javascript" src="/skin/js/function.js"></script>
+<script type="text/javascript" src="/skin/js/function.js?v=1"></script>
 <script type="text/javascript" src="/skin/js/jquery.cookie.js"></script>
 
 <link href="/js/nsc_m/need/layer.css?2.0" type="text/css" rel="styleSheet" id="layermcss">
