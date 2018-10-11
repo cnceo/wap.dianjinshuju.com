@@ -393,6 +393,7 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
         <a href="/index.php/team/memberList">> 用户列表</a>
         <a href="/index.php/team/addMember">> 手动注册</a>
         <a href="/index.php/team/coinall">> 团队统计</a>
+        <a href="/index.php/team/coin">> 收益记录/a>
     </div>
     <p>点金产品</p>
     <div class="allWidthLink">
@@ -475,7 +476,7 @@ if($toTime) $toTime=strtotime($toTime)+24*3600;
                             }
                         })
                         return false;
-                    }else if(data<=1){
+                    }else if(data<1){
                         layer.open({
                             content:"您还不是会员，请先购买会员!!!",
                             btn:'确定',

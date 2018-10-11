@@ -17,22 +17,22 @@
 			<td class="title">充值金额</td>
 			<td><?=$rechargeInfo['amount']?>元</td>
 		</tr>
-		<tr>
+		<!--<tr>
 			<td class="title">充值前资金</td>
-			<td><?=number_format($rechargeInfo['coin'],2)?>元</td>
+			<td><?/*=number_format($rechargeInfo['coin'],2)*/?>元</td>
 		</tr>
 		<tr>
 			<td class="title">充值银行</td>
-			<td><?=$this->ifs($bankInfo['bankName'], '--')?></td>
+			<td><?/*=$this->ifs($bankInfo['bankName'], '--')*/?></td>
 		</tr>
 		<tr>
 			<td class="title">银行账号</td>
-			<td><?=$this->ifs($bankInfo['account'], '--')?></td>
+			<td><?/*=$this->ifs($bankInfo['account'], '--')*/?></td>
 		</tr>
 		<tr>
 			<td class="title">开户名</td>
-			<td><?=$this->ifs($bankInfo['accountName'], '--')?></td>
-		</tr>
+			<td><?/*=$this->ifs($bankInfo['accountName'], '--')*/?></td>
+		</tr>-->
         <tr>
 			<td class="title">充值时间</td>
 			<td><?=date("Y-m-d H:i:s",$rechargeInfo['rechargeTime'])?></td>

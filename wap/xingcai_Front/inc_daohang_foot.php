@@ -28,6 +28,7 @@
             <a href="/index.php/team/memberList">> 用户列表</a>
             <a href="/index.php/team/addMember">> 手动注册</a>
             <a href="/index.php/team/coinall">> 团队统计</a>
+            <a href="/index.php/team/coin">> 收益记录/a>
         </div>
         <p>点金产品</p>
         <div class="allWidthLink">
